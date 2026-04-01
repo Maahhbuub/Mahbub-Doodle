@@ -1,13 +1,13 @@
-import { Trophy, Code, ChefHat, SquareTerminal, Globe, BarChart2, Gavel } from 'lucide-react';
+import { Trophy, Code, ChefHat, SquareTerminal, Globe, BarChart2, Gavel, ArrowRight } from 'lucide-react';
 import styles from './CompetitiveProgramming.module.css';
 
 const platforms = [
-  { name: 'Codeforces', icon: <BarChart2 size={16} />, color: 'blue', link: 'https://codeforces.com/profile/Maahhbuub' },
-  { name: 'LeetCode', icon: <Code size={16} />, color: 'yellow', link: 'https://leetcode.com/Maahhbuub/' },
-  { name: 'CodeChef', icon: <ChefHat size={16} />, color: 'green', link: 'https://www.codechef.com/users/maahhbuub' },
-  { name: 'HackerRank', icon: <SquareTerminal size={16} />, color: 'green', link: 'https://www.hackerrank.com/Maahhbuub' },
-  { name: 'HackerEarth', icon: <Globe size={16} />, color: 'pink', link: 'https://www.hackerearth.com/@Maahhbuub' },
-  { name: 'Vjudge', icon: <Gavel size={16} />, color: 'purple', link: 'https://vjudge.net/user/Maahhbuub' },
+  { name: 'Codeforces', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/Maahhbuub' },
+  { name: 'LeetCode', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/Maahhbuub/' },
+  { name: 'CodeChef', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/maahhbuub' },
+  { name: 'HackerRank', icon: <SquareTerminal size={24} />, color: 'green', link: 'https://www.hackerrank.com/Maahhbuub' },
+  { name: 'HackerEarth', icon: <Globe size={24} />, color: 'pink', link: 'https://www.hackerearth.com/@Maahhbuub' },
+  { name: 'Vjudge', icon: <Gavel size={24} />, color: 'purple', link: 'https://vjudge.net/user/Maahhbuub' },
 ];
 
 export default function CompetitiveProgramming() {
@@ -27,10 +27,27 @@ export default function CompetitiveProgramming() {
               href={p.link !== '#' ? p.link : undefined}
               target="_blank"
               rel="noreferrer"
-              className={`doodle-box ${styles.cpBadge} ${styles[p.color]}`}
-              style={{ animationDelay: `${i * 0.1}s`, textDecoration: 'none' }}>
-              <span className={styles.cpIcon} style={{ display: 'flex' }}>{p.icon}</span>
-              <span className={styles.cpName}>{p.name}</span>
+              className={`doodle-box ${styles.cpCard} ${styles[p.color]}`}
+              style={{ animationDelay: `${i * 0.1}s` }}>
+              
+              <div className={styles.cardHeader}>
+                <div className={styles.iconWrapper}>
+                  {p.icon}
+                </div>
+                <h3 className={styles.platformName}>{p.name}</h3>
+              </div>
+
+              <div className={styles.cardBody}>
+                {/* Hand-drawn style activity graph */}
+                <svg className={styles.graphDoodle} viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0,25 Q10,15 20,20 T40,10 T60,20 T80,5 T100,15" fill="none" stroke="var(--ink)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 4" opacity="0.5" />
+                </svg>
+              </div>
+
+              <div className={styles.cardFooter}>
+                <span>View Profile</span>
+                <ArrowRight size={18} />
+              </div>
             </a>
           ))}
         </div>
@@ -39,7 +56,7 @@ export default function CompetitiveProgramming() {
         <div className={styles.decoration} aria-hidden="true">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,20 Q20,0 40,20 T80,20 T120,20 T160,20 T200,20"
-              fill="none" stroke="#1a1a2e" strokeWidth="4" strokeLinecap="round" />
+              fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" opacity="0.6"/>
           </svg>
         </div>
       </div>
