@@ -8,7 +8,7 @@ const projects = [
     desc: 'A ride-sharing platform that integrates intra-city ride sharing and inter-city carpooling.',
     tags: ['React Native', 'Express.Js', 'Redis', 'Firebase', 'PostgreSQL'],
     color: 'pink',
-    link: 'https://demo-link.com/',
+    link: 'https://www.example.com/',
     repo: 'https://github.com/SatheCholo/sathecholo-app',
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     desc: 'Built a 3-sided platform connecting farmers, distributors, and retailers to reduce supply chain inefficiencies.',
     tags: ['Python', 'PHP', 'JavaScript', 'MySQL'],
     color: 'blue',
-    link: 'https://demo-link.com/',
+    link: 'https://www.example.com/',
     repo: 'https://github.com/TashinParvez/direct-edge',
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     desc: 'Built a full-stack URL shortening platform with QR code generation, password-protected links, and AI-based click analysis to track and predict user engagement.',
     tags: ['React', 'ExpressJs', 'MongoDB', 'Redis'],
     color: 'yellow',
-    link: 'https://demo-link.com/',
+    link: 'https://www.example.com/',
     repo: 'https://github.com/Maahhbuub/Shorten',
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     desc: 'A full-featured web platform that helps users discover recipes, plan meals, track nutrition, and manage kitchen activities more efficiently.',
     tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
     color: 'blue',
-    link: 'https://demo-link.com/',
+    link: 'https://www.example.com/',
     repo: 'https://github.com/TashinParvez/Cook-Corner',
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     desc: 'ExeCode is a comprehensive online competitive programming platform that provides a complete ecosystem for competitive programming.',
     tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
     color: 'pink',
-    link: 'https://demo-link.com/',
+    link: 'https://www.example.com/',
     repo: 'https://github.com/Maahhbuub/ExeCode',
   }
 ];
@@ -101,10 +101,10 @@ export default function Projects() {
                 </svg>
 
                 <div className={styles.linksOverlay}>
-                  <a href={p.repo} aria-label="Github Repo">
+                  <a href={p.repo} target="_blank" rel="noopener noreferrer" aria-label="Github Repo">
                     <Code size={18} />
                   </a>
-                  <a href={p.link} aria-label="Live Demo">
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
                     <ExternalLink size={18} />
                   </a>
                 </div>

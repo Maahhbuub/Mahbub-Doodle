@@ -20,7 +20,7 @@ const experiences = [
   },
   {
     role: 'Project Developer (University Projects)',
-    company: 'Freelance',
+    company: 'United International University',
     period: '2022 - 2026',
     desc: 'Worked on multiple academic projects involving web and application development. Built functional systems using modern technologies such as JavaScript, Python, and databases. Focused on problem-solving, clean design, and user experience.',
     icon: <Palette size={24} />,

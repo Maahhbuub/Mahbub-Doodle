@@ -38,7 +38,7 @@ export default function About() {
                 Hello! I'm <strong>Mahbub</strong> — a passionate software engineer who thrives at the intersection of <em className="wobbly-underline">creativity</em> and technical precision. I don't just write code; I craft digital experiences.
               </p>
               <p>
-                When I'm not hammering at the keyboard debugging things that I swear were working yesterday, you'll find me thinking of new ideas, contributing to open source, or hunting for the world's best cup of coffee.
+                When I'm not hammering at the keyboard debugging things that I swear were working yesterday, you'll find me finding new ideas, practicing brain games(CP), or hunting for the world's best cup of coffee.
               </p>
               <p>
                 I believe great software is built with empathy for users, an obsession over the smallest details, and a tiny pinch of madness!

@@ -27,7 +27,7 @@ export default function Contact() {
                </div>
                <div className={styles.infoRow}>
                  <span className={styles.infoIcon} style={{ display: 'flex', color: 'var(--ink)' }}><Smartphone size={24} /></span>
-                 <a href="tel:+8801744177620" className={styles.infoLink}>+880 1744 177 620</a>
+                 <a href="tel:+8801744177620" className={styles.infoLink}>+88 017 441 77 620</a>
                </div>
              </div>
              
