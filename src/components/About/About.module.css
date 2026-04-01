@@ -1,134 +1,225 @@
 .about {
   position: relative;
   overflow: hidden;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.illustrationCol {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sketchCard {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-}
-
-.sketch {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(6px 6px 0px var(--ink));
-  transform: rotate(-2deg);
-  transition: transform 0.3s ease;
-}
-
-.sketchCard:hover .sketch {
-  transform: rotate(1deg) scale(1.02);
-}
-
-.sketchLabel {
-  font-family: var(--font-doodle);
-  font-size: 1.2rem;
-  color: var(--ink-light);
-  text-align: center;
-  margin-top: 1rem;
-  transform: rotate(3deg);
-}
-
-.textCol {
+  background-color: var(--paper-dark);
+  padding: 5rem 0;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  
+  /* Add subtle dot grid background to feel like bullet journal */
+  background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-position: 0 0;
+}
+
+.topSquiggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.15;
+}
+
+.topSquiggle svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 }
 
-.title {
-  margin-bottom: 0.5rem;
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Notepad Bio styling */
+.notepad {
+  position: relative;
+  background: var(--paper);
+  padding: 3.5rem 3rem 3rem 3rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-ink-lg);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+  
+  /* Notebook lines */
+  background-image: repeating-linear-gradient(transparent, transparent 1.8rem, rgba(0,0,0,0.06) 1.8rem, rgba(0,0,0,0.06) 1.9rem);
+  background-position: 0 1rem;
+}
+
+.notepad:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 120px;
+  height: 35px;
+  background-color: var(--accent-pink);
+  opacity: 0.8;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.pin {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  transform: rotate(15deg);
+  z-index: 1;
+  text-shadow: 2px 2px 0 var(--ink);
+  animation: float 4s ease-in-out infinite;
 }
 
 .bio {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.facts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.factCard {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-width: 2.5px;
-  background: var(--paper);
-  transform: rotate(random(-2deg, 2deg));
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.factCard:nth-child(even) {
-  transform: rotate(1.5deg);
-}
-.factCard:nth-child(odd) {
-  transform: rotate(-1.5deg);
-}
-
-.factCard:hover {
-  transform: translateY(-4px) rotate(0deg);
-  box-shadow: 6px 6px 0px var(--ink);
+  gap: 1.8rem;
+  line-height: 1.9rem; /* Align perfectly with notebook lines */
+  position: relative;
   z-index: 2;
 }
 
-.factEmoji {
-  font-size: 2rem;
-  line-height: 1;
+.bio p {
+  margin: 0;
+}
+
+/* Sticky notes grid */
+.factsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.postIt {
+  position: relative;
+  padding: 1.5rem;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(var(--rotation, 2deg));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, z-index 0.2s;
+}
+
+.postIt:hover {
+  transform: translateY(-5px) rotate(0deg) scale(1.05) !important;
+  box-shadow: 8px 8px 0 var(--ink);
+  z-index: 10;
+}
+
+/* Post-it colors */
+.yellow { background-color: var(--accent-yellow); }
+.blue { background-color: var(--accent-blue); }
+.pink { background-color: var(--accent-pink); }
+.green { background-color: var(--accent-green); }
+
+.postItPin {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.factIcon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.4);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
 }
 
 .factLabel {
   font-family: var(--font-doodle);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--ink-light);
+  color: var(--ink);
   line-height: 1.2;
 }
 
 .factValue {
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
   font-weight: 600;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+}
+
+.doodles {
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translateY(-50%);
+  width: 100px;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.arrow {
+  width: 100px;
+  height: 100px;
+  transform: rotate(20deg);
+}
+
+.doodleText {
+  font-family: var(--font-doodle);
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--ink);
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  transform: rotate(15deg);
 }
 
-@media (max-width: 860px) {
-  .grid {
+@media (max-width: 1024px) {
+  .contentWrapper {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 5rem;
   }
   
-  .illustrationCol {
-    order: -1;
-  }
-  
-  .sketchCard {
-    max-width: 320px;
+  .doodles {
+    display: none;
   }
 }
 
-@media (max-width: 500px) {
-  .facts {
+@media (max-width: 540px) {
+  .factsGrid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .notepad {
+    padding: 3rem 1.5rem;
   }
 }
