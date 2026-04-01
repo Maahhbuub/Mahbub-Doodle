@@ -1,0 +1,115 @@
+.cp {
+  background-color: var(--paper);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cpGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cpBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 2px 2px 0px var(--ink);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  color: inherit;
+}
+
+.cpBadge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 0;
+  transition: background-color 0.25s ease;
+}
+
+.cpBadge:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.cpBadge:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.cpBadge:hover {
+  transform: translateY(-4px) scale(1.05) rotate(0deg);
+  box-shadow: 4px 4px 0px var(--ink);
+  z-index: 10;
+}
+
+/* Color thematic variations */
+.cpBadge.yellow:hover::before {
+  background: var(--accent-yellow);
+}
+
+.cpBadge.blue:hover::before {
+  background: var(--accent-blue);
+}
+
+.cpBadge.green:hover::before {
+  background: var(--accent-green);
+}
+
+.cpBadge.pink:hover::before {
+  background: var(--accent-pink);
+}
+
+.cpBadge.purple:hover::before {
+  background: var(--accent-purple);
+}
+
+.cpIcon,
+.cpName {
+  position: relative;
+  z-index: 1;
+}
+
+.cpIcon {
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  opacity: 0.8;
+}
+
+.cpName {
+  font-family: var(--font-doodle);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.decoration {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.decoration svg {
+  width: 200px;
+  height: 40px;
+}
