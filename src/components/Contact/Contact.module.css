@@ -106,6 +106,7 @@
   position: relative;
   box-shadow: 8px 8px 0 var(--ink);
   transition: transform 0.3s ease;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
 
 .form:hover {
@@ -170,7 +171,7 @@
 
 /* Notebook lines for textarea */
 .textarea {
-  background-image: repeating-linear-gradient(transparent, transparent 1.6rem, rgba(0,0,0,0.1) 1.6rem, rgba(0,0,0,0.1) 1.7rem);
+  background-image: repeating-linear-gradient(transparent, transparent 1.6rem, rgba(0, 0, 0, 0.1) 1.6rem, rgba(0, 0, 0, 0.1) 1.7rem);
   line-height: 1.7rem;
   padding-top: 0.5rem;
 }
@@ -187,11 +188,11 @@
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .planeWrapper {
     display: none;
   }
-  
+
   .form {
     transform: rotate(0);
   }

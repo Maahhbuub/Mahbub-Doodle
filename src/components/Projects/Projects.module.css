@@ -13,7 +13,7 @@
   background: var(--accent-yellow);
   opacity: 0.6;
   z-index: 0;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tapeTopLeft {
@@ -41,7 +41,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 3rem; /* Increased gap to accommodate rotation and shadows */
+  gap: 3rem;
+  /* Increased gap to accommodate rotation and shadows */
 }
 
 /* Polaroid-style cards */
@@ -52,10 +53,16 @@
   flex-direction: column;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   height: 100%;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
 
-.card:nth-child(even) { transform: rotate(2deg); }
-.card:nth-child(odd) { transform: rotate(-2.5deg); }
+.card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.card:nth-child(odd) {
+  transform: rotate(-2.5deg);
+}
 
 .card:hover {
   transform: translateY(-10px) rotate(0deg) scale(1.03);
@@ -67,18 +74,30 @@
   position: relative;
   height: 150px;
   border: 3px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0, rgba(0,0,0,0.03) 10px, transparent 10px, transparent 20px);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 10px, transparent 10px, transparent 20px);
 }
 
 /* Dynamic header colors */
-.pink { background-color: var(--accent-pink); }
-.blue { background-color: var(--accent-blue); }
-.green { background-color: var(--accent-green); }
-.yellow { background-color: var(--accent-yellow); }
+.pink {
+  background-color: var(--accent-pink);
+}
+
+.blue {
+  background-color: var(--accent-blue);
+}
+
+.green {
+  background-color: var(--accent-green);
+}
+
+.yellow {
+  background-color: var(--accent-yellow);
+}
 
 .cardTape {
   position: absolute;
@@ -90,7 +109,7 @@
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px dashed var(--ink);
   z-index: 2;
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .abstractSvg {

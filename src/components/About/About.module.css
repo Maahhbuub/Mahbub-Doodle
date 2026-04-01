@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   /* Add subtle dot grid background to feel like bullet journal */
   background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
   background-size: 30px 30px;
@@ -50,13 +50,13 @@
   position: relative;
   background: var(--paper);
   padding: 3.5rem 3rem 3rem 3rem;
-  border-radius: 4px;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   box-shadow: var(--shadow-ink-lg);
   transform: rotate(-1deg);
   transition: transform 0.3s ease;
-  
+
   /* Notebook lines */
-  background-image: repeating-linear-gradient(transparent, transparent 1.8rem, rgba(0,0,0,0.06) 1.8rem, rgba(0,0,0,0.06) 1.9rem);
+  background-image: repeating-linear-gradient(transparent, transparent 1.8rem, rgba(0, 0, 0, 0.06) 1.8rem, rgba(0, 0, 0, 0.06) 1.9rem);
   background-position: 0 1rem;
 }
 
@@ -73,7 +73,7 @@
   height: 35px;
   background-color: var(--accent-pink);
   opacity: 0.8;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -94,7 +94,8 @@
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
-  line-height: 1.9rem; /* Align perfectly with notebook lines */
+  line-height: 1.9rem;
+  /* Align perfectly with notebook lines */
   position: relative;
   z-index: 2;
 }
@@ -115,6 +116,7 @@
   position: relative;
   padding: 1.5rem;
   border: 2px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   box-shadow: 4px 4px 0 var(--ink);
   transform: rotate(var(--rotation, 2deg));
   display: flex;
@@ -130,10 +132,21 @@
 }
 
 /* Post-it colors */
-.yellow { background-color: var(--accent-yellow); }
-.blue { background-color: var(--accent-blue); }
-.pink { background-color: var(--accent-pink); }
-.green { background-color: var(--accent-green); }
+.yellow {
+  background-color: var(--accent-yellow);
+}
+
+.blue {
+  background-color: var(--accent-blue);
+}
+
+.pink {
+  background-color: var(--accent-pink);
+}
+
+.green {
+  background-color: var(--accent-green);
+}
 
 .postItPin {
   position: absolute;
@@ -150,7 +163,7 @@
 .factIcon {
   width: 50px;
   height: 50px;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.4);
   border: 2px solid var(--ink);
   border-radius: 50%;
   display: flex;
@@ -207,7 +220,7 @@
     grid-template-columns: 1fr;
     gap: 5rem;
   }
-  
+
   .doodles {
     display: none;
   }
@@ -218,7 +231,7 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .notepad {
     padding: 3rem 1.5rem;
   }

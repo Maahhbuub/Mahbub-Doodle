@@ -3,9 +3,9 @@
   padding: 8rem 0;
   overflow: hidden;
   position: relative;
-  
+
   /* Striped notebook background */
-  background-image: repeating-linear-gradient(transparent, transparent 3rem, rgba(0,0,0,0.03) 3rem, rgba(0,0,0,0.03) 3.1rem);
+  background-image: repeating-linear-gradient(transparent, transparent 3rem, rgba(0, 0, 0, 0.03) 3rem, rgba(0, 0, 0, 0.03) 3.1rem);
 }
 
 .header {
@@ -73,8 +73,10 @@
   height: 60px;
   border: 4px solid var(--ink);
   background: var(--paper);
-  border-radius: 5px; /* Slight rounded square instead of circle */
-  transform: rotate(45deg); /* Diamond shape */
+  border-radius: 5px;
+  /* Slight rounded square instead of circle */
+  transform: rotate(45deg);
+  /* Diamond shape */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +85,8 @@
 }
 
 .dot span {
-  transform: rotate(-45deg); /* Counter-rotate icon */
+  transform: rotate(-45deg);
+  /* Counter-rotate icon */
 }
 
 .item:hover .dot {
@@ -92,9 +95,17 @@
 }
 
 /* Colors for the diamond dots */
-.pink { background-color: var(--accent-pink); }
-.blue { background-color: var(--accent-blue); }
-.yellow { background-color: var(--accent-yellow); }
+.pink {
+  background-color: var(--accent-pink);
+}
+
+.blue {
+  background-color: var(--accent-blue);
+}
+
+.yellow {
+  background-color: var(--accent-yellow);
+}
 
 .content {
   width: 42%;
@@ -103,6 +114,7 @@
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-width: 3px;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
 
 /* Alternate tilts */
@@ -110,15 +122,24 @@
   margin-right: auto;
   transform: rotate(-1deg);
 }
+
 .itemRight .content {
   margin-left: auto;
   transform: rotate(1.5deg);
 }
 
 /* Thick colored bottom borders based on assigned color */
-.content-pink { border-bottom: 8px solid var(--accent-pink); }
-.content-blue { border-bottom: 8px solid var(--accent-blue); }
-.content-yellow { border-bottom: 8px solid var(--accent-yellow); }
+.content-pink {
+  border-bottom: 8px solid var(--accent-pink);
+}
+
+.content-blue {
+  border-bottom: 8px solid var(--accent-blue);
+}
+
+.content-yellow {
+  border-bottom: 8px solid var(--accent-yellow);
+}
 
 .content:hover {
   transform: translateY(-5px) rotate(0);
@@ -205,16 +226,16 @@
   .lineWrapper {
     left: 40px;
   }
-  
+
   .dotWrapper {
     left: 40px;
   }
-  
+
   .content {
     width: calc(100% - 110px);
   }
-  
-  .itemLeft .content, 
+
+  .itemLeft .content,
   .itemRight .content {
     margin-left: 110px;
     margin-right: 0;
@@ -222,12 +243,13 @@
   }
 
   /* Move clips to left for mobile layout */
-  .clipRight, .clipLeft {
+  .clipRight,
+  .clipLeft {
     left: -20px;
     right: auto;
     transform: rotate(-90deg) scaleY(-1);
   }
-  
+
   .endpoint {
     left: 40px;
   }
