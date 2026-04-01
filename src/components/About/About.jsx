@@ -30,7 +30,7 @@ export default function About() {
           {/* Main notepad bio */}
           <div className={`doodle-box ${styles.notepad}`}>
             <div className={styles.tape} aria-hidden="true" />
-            <div className={styles.pin} aria-hidden="true">📍</div>
+            {/* <div className={styles.pin} aria-hidden="true">📍</div> */}
             
             <div className={styles.bio}>
               <p>
@@ -40,7 +40,7 @@ export default function About() {
                 When I'm not hammering at the keyboard debugging things that I swear were working yesterday, you'll find me sketching UI ideas, contributing to open source, or hunting for the world's best cup of coffee.
               </p>
               <p>
-                I believe great software is built with empathy for users, an obsession over the smallest details, and a tiny pinch of madness! 🚀
+                I believe great software is built with empathy for users, an obsession over the smallest details, and a tiny pinch of madness!
               </p>
             </div>
           </div>

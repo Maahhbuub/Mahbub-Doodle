@@ -43,7 +43,7 @@ const projects = [
 export default function Projects() {
   return (
     <section className={`section ${styles.projects}`} id="projects"
-             style={{ background: 'var(--paper)' }}>
+      style={{ background: 'var(--paper)' }}>
       {/* Background tape strips */}
       <div className={styles.tapeTopLeft} aria-hidden="true" />
       <div className={styles.tapeBottomRight} aria-hidden="true" />
@@ -55,41 +55,41 @@ export default function Projects() {
           </h2>
           <p className="section-subtitle">
             A selection of stuff I've built.
-            <br/>Mostly it works. Sometimes it breaks. 😅
+            <br />Mostly it works. Sometimes it breaks. :)
           </p>
         </div>
 
         <div className={styles.grid}>
           {projects.map((p, i) => (
             <article key={p.id} className={`doodle-box ${styles.card}`}>
-              
+
               {/* Illustration Header representing a sketch placeholder */}
               <div className={`${styles.cardHeader} ${styles[p.color]}`}>
-                 <div className={styles.cardTape} aria-hidden="true" />
-                 <svg className={styles.abstractSvg} viewBox="0 0 100 100" preserveAspectRatio="none">
-                    {i % 2 === 0 ? (
-                      <>
-                        <circle cx="20" cy="80" r="10" fill="none" stroke="var(--ink)" strokeWidth="3" />
-                        <path d="M40,50 Q60,10 80,60 T100,50" fill="none" stroke="var(--ink)" strokeWidth="3" />
-                        <rect x="70" y="20" width="15" height="15" fill="none" stroke="var(--ink)" strokeWidth="3" transform="rotate(15 70 20)" />
-                      </>
-                    ) : (
-                      <>
-                        <path d="M10,90 L50,10 L90,90 Z" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
-                        <path d="M30,50 L70,50" fill="none" stroke="var(--ink)" strokeWidth="3" strokeDasharray="5,5" />
-                        <circle cx="50" cy="50" r="5" fill="var(--ink)" stroke="none" />
-                      </>
-                    )}
-                 </svg>
-                 
-                 <div className={styles.linksOverlay}>
-                    <a href={p.repo} aria-label="Github Repo">
-                      <Code size={18} />
-                    </a>
-                    <a href={p.link} aria-label="Live Demo">
-                      <ExternalLink size={18} />
-                    </a>
-                 </div>
+                <div className={styles.cardTape} aria-hidden="true" />
+                <svg className={styles.abstractSvg} viewBox="0 0 100 100" preserveAspectRatio="none">
+                  {i % 2 === 0 ? (
+                    <>
+                      <circle cx="20" cy="80" r="10" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                      <path d="M40,50 Q60,10 80,60 T100,50" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                      <rect x="70" y="20" width="15" height="15" fill="none" stroke="var(--ink)" strokeWidth="3" transform="rotate(15 70 20)" />
+                    </>
+                  ) : (
+                    <>
+                      <path d="M10,90 L50,10 L90,90 Z" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
+                      <path d="M30,50 L70,50" fill="none" stroke="var(--ink)" strokeWidth="3" strokeDasharray="5,5" />
+                      <circle cx="50" cy="50" r="5" fill="var(--ink)" stroke="none" />
+                    </>
+                  )}
+                </svg>
+
+                <div className={styles.linksOverlay}>
+                  <a href={p.repo} aria-label="Github Repo">
+                    <Code size={18} />
+                  </a>
+                  <a href={p.link} aria-label="Live Demo">
+                    <ExternalLink size={18} />
+                  </a>
+                </div>
               </div>
 
               <div className={styles.cardBody}>
@@ -105,11 +105,11 @@ export default function Projects() {
             </article>
           ))}
         </div>
-        
+
         <div className={styles.more}>
-           <a href="https://github.com" target="_blank" rel="noreferrer" className="btn-doodle">
-             View All on GitHub
-           </a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" className="btn-doodle">
+            View All on GitHub
+          </a>
         </div>
       </div>
     </section>
