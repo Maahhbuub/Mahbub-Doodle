@@ -1,4 +1,4 @@
-import { Briefcase, Folder, Code, ExternalLink } from 'lucide-react';
+import { Briefcase, Code, ExternalLink } from 'lucide-react';
 import styles from './Projects.module.css';
 
 const projects = [
@@ -63,29 +63,47 @@ export default function Projects() {
         </div>
 
         <div className={styles.grid}>
-          {projects.map((p) => (
-            <article key={p.id} className={`doodle-box ${styles.card} ${styles[p.color]}`}>
-              <div className={styles.cardHeader}>
-                <div className={styles.folders} style={{ display: 'flex', color: 'var(--ink)' }}>
-                   <Folder size={32} />
-                </div>
-                <div className={styles.links}>
-                  <a href={p.repo} aria-label="Github Repo" style={{ display: 'flex', color: 'var(--ink)' }}>
-                    <Code size={22} />
-                  </a>
-                  <a href={p.link} aria-label="Live Demo" style={{ display: 'flex', color: 'var(--ink)' }}>
-                    <ExternalLink size={22} />
-                  </a>
-                </div>
+          {projects.map((p, i) => (
+            <article key={p.id} className={`doodle-box ${styles.card}`}>
+              
+              {/* Illustration Header representing a sketch placeholder */}
+              <div className={`${styles.cardHeader} ${styles[p.color]}`}>
+                 <div className={styles.cardTape} aria-hidden="true" />
+                 <svg className={styles.abstractSvg} viewBox="0 0 100 100" preserveAspectRatio="none">
+                    {i % 2 === 0 ? (
+                      <>
+                        <circle cx="20" cy="80" r="10" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                        <path d="M40,50 Q60,10 80,60 T100,50" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                        <rect x="70" y="20" width="15" height="15" fill="none" stroke="var(--ink)" strokeWidth="3" transform="rotate(15 70 20)" />
+                      </>
+                    ) : (
+                      <>
+                        <path d="M10,90 L50,10 L90,90 Z" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
+                        <path d="M30,50 L70,50" fill="none" stroke="var(--ink)" strokeWidth="3" strokeDasharray="5,5" />
+                        <circle cx="50" cy="50" r="5" fill="var(--ink)" stroke="none" />
+                      </>
+                    )}
+                 </svg>
+                 
+                 <div className={styles.linksOverlay}>
+                    <a href={p.repo} aria-label="Github Repo">
+                      <Code size={20} />
+                    </a>
+                    <a href={p.link} aria-label="Live Demo">
+                      <ExternalLink size={20} />
+                    </a>
+                 </div>
               </div>
 
-              <h3 className={styles.cardTitle}>{p.title}</h3>
-              <p className={styles.cardDesc}>{p.desc}</p>
+              <div className={styles.cardBody}>
+                <h3 className={styles.cardTitle}>{p.title}</h3>
+                <p className={styles.cardDesc}>{p.desc}</p>
 
-              <div className={styles.tags}>
-                {p.tags.map((t) => (
-                  <span key={t} className={styles.tag}>{t}</span>
-                ))}
+                <div className={styles.tags}>
+                  {p.tags.map((t) => (
+                    <span key={t} className={styles.tag}>{t}</span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

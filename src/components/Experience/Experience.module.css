@@ -1,12 +1,16 @@
 .experience {
   background-color: var(--paper-dark);
-  padding: 6rem 0;
+  padding: 8rem 0;
   overflow: hidden;
+  position: relative;
+  
+  /* Striped notebook background */
+  background-image: repeating-linear-gradient(transparent, transparent 3rem, rgba(0,0,0,0.03) 3rem, rgba(0,0,0,0.03) 3.1rem);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,27 +19,26 @@
 
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
-/* Wibbly wobbly hand-drawn line */
-.line {
+/* Custom squiggly line */
+.lineWrapper {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 4px;
+  width: 40px;
   transform: translateX(-50%);
-  border-left: 4px dashed var(--ink);
-  opacity: 0.3;
   z-index: 0;
+  overflow: hidden;
 }
 
 .item {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -44,138 +47,196 @@
 }
 
 .item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
 
-.dot {
+.itemLeft {
+  flex-direction: row;
+}
+
+.itemRight {
+  flex-direction: row-reverse;
+}
+
+.dotWrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background: var(--accent-yellow);
-  border: 3px solid var(--ink);
-  border-radius: 50%; /* Make it circular but wobbly slightly via box-shadow */
-  box-shadow: 2px 2px 0 var(--ink);
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  z-index: 2;
-  transition: transform 0.3s ease;
+}
+
+.dot {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--ink);
+  background: var(--paper);
+  border-radius: 5px; /* Slight rounded square instead of circle */
+  transform: rotate(45deg); /* Diamond shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dot span {
+  transform: rotate(-45deg); /* Counter-rotate icon */
 }
 
 .item:hover .dot {
-  transform: translateX(-50%) scale(1.1) rotate(10deg);
-  background: var(--accent-pink);
+  transform: rotate(55deg) scale(1.1);
+  box-shadow: 6px 6px 0 var(--ink);
 }
+
+/* Colors for the diamond dots */
+.pink { background-color: var(--accent-pink); }
+.blue { background-color: var(--accent-blue); }
+.yellow { background-color: var(--accent-yellow); }
 
 .content {
   width: 42%;
-  padding: 1.8rem;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
   background: var(--paper);
+  position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-width: 3px;
 }
 
-.left {
+/* Alternate tilts */
+.itemLeft .content {
   margin-right: auto;
-  transform: rotate(-1.5deg);
+  transform: rotate(-1deg);
 }
-.left::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -13px;
-  width: 20px;
-  height: 20px;
-  background: inherit;
-  border-top: 3px solid var(--ink);
-  border-right: 3px solid var(--ink);
-  transform: rotate(45deg);
-}
-
-.right {
+.itemRight .content {
   margin-left: auto;
   transform: rotate(1.5deg);
 }
-.right::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -13px;
-  width: 20px;
-  height: 20px;
-  background: inherit;
-  border-bottom: 3px solid var(--ink);
-  border-left: 3px solid var(--ink);
-  transform: rotate(45deg);
-}
+
+/* Thick colored bottom borders based on assigned color */
+.content-pink { border-bottom: 8px solid var(--accent-pink); }
+.content-blue { border-bottom: 8px solid var(--accent-blue); }
+.content-yellow { border-bottom: 8px solid var(--accent-yellow); }
 
 .content:hover {
   transform: translateY(-5px) rotate(0);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
   z-index: 3;
 }
 
-.period {
+/* Paperclip styling connecting content to center */
+.paperclip {
+  position: absolute;
+  top: 30px;
+  width: 40px;
+  height: 100px;
+  z-index: 4;
+}
+
+.clipRight {
+  right: -20px;
+  transform: rotate(90deg);
+}
+
+.clipLeft {
+  left: -20px;
+  transform: rotate(-90deg) scaleY(-1);
+}
+
+.periodBadge {
   font-family: var(--font-doodle);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-pink);
   display: inline-block;
-  margin-bottom: 0.5rem;
-  border-bottom: 2px dashed var(--accent-pink);
+  padding: 0.3rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 var(--ink-light);
 }
 
 .role {
   font-family: var(--font-doodle);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.2;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
 }
 
 .company {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--ink-light);
-  margin-bottom: 1rem;
-  opacity: 0.8;
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
 }
 
 .desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-@media (max-width: 768px) {
-  .line {
+/* Corner decoration */
+.cornerDoodle {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+/* Endpoint */
+.endpoint {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  margin-top: 1rem;
+  animation: wobble 4s infinite alternate;
+}
+
+@media (max-width: 860px) {
+  .lineWrapper {
     left: 40px;
   }
   
-  .dot {
+  .dotWrapper {
     left: 40px;
   }
   
   .content {
-    width: calc(100% - 90px);
-    margin-left: 90px !important;
-    margin-right: 0 !important;
+    width: calc(100% - 110px);
   }
   
-  .left::after,
-  .right::after {
-    left: -13px;
+  .itemLeft .content, 
+  .itemRight .content {
+    margin-left: 110px;
+    margin-right: 0;
+    transform: rotate(0);
+  }
+
+  /* Move clips to left for mobile layout */
+  .clipRight, .clipLeft {
+    left: -20px;
     right: auto;
-    border-right: none;
-    border-top: none;
-    border-bottom: 3px solid var(--ink);
-    border-left: 3px solid var(--ink);
+    transform: rotate(-90deg) scaleY(-1);
+  }
+  
+  .endpoint {
+    left: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .content {
-    padding: 1.2rem;
+    padding: 2rem 1.5rem;
+    width: calc(100% - 90px);
+    margin-left: 90px !important;
   }
 }
