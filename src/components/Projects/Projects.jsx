@@ -84,10 +84,10 @@ export default function Projects() {
                  
                  <div className={styles.linksOverlay}>
                     <a href={p.repo} aria-label="Github Repo">
-                      <Code size={20} />
+                      <Code size={18} />
                     </a>
                     <a href={p.link} aria-label="Live Demo">
-                      <ExternalLink size={20} />
+                      <ExternalLink size={18} />
                     </a>
                  </div>
               </div>

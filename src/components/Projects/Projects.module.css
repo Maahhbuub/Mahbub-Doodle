@@ -40,8 +40,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3.5rem; /* Increased gap to accommodate rotation and shadows */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem; /* Increased gap to accommodate rotation and shadows */
 }
 
 /* Polaroid-style cards */
@@ -65,7 +65,7 @@
 
 .cardHeader {
   position: relative;
-  height: 180px;
+  height: 150px;
   border: 3px solid var(--ink);
   overflow: hidden;
   display: flex;
@@ -112,8 +112,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: var(--paper);
   border: 2px solid var(--ink);
   border-radius: 50%;
@@ -138,7 +138,7 @@
 
 .cardTitle {
   font-family: var(--font-doodle);
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--ink);
   line-height: 1.1;
@@ -149,7 +149,7 @@
 }
 
 .cardDesc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--ink-light);
   flex-grow: 1;
   margin-bottom: 1.5rem;
@@ -164,7 +164,7 @@
 
 .tag {
   font-family: var(--font-doodle);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 600;
   padding: 0.15em 0.8em;
   border: 2px solid var(--ink);

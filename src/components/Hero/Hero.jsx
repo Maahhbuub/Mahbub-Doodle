@@ -94,21 +94,21 @@ export default function Hero() {
 
             <div className={styles.actions}>
               <a href="#projects" className="btn-doodle" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Rocket size={20} className={styles.btnIconFly} /> See My Work
+                <Rocket size={16} className={styles.btnIconFly} /> See My Work
               </a>
-              <a href="/resume.pdf" className={`btn-doodle outline ${styles.resumeBtn}`} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <FileText size={20} /> Resume
+              <a href="/resume.pdf" className={`btn-doodle ${styles.resumeBtn}`} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--paper)' }}>
+                <FileText size={16} /> Resume
               </a>
             </div>
 
             <div className={styles.socials}>
               {[
-                { label: 'GitHub', icon: <Code size={18} />, href: 'https://github.com', brand: 'github' },
-                { label: 'LinkedIn', icon: <Briefcase size={18} />, href: 'https://linkedin.com', brand: 'linkedin' },
-                { label: 'Twitter', icon: <MessageCircle size={18} />, href: 'https://twitter.com', brand: 'twitter' },
+                { label: 'GitHub', icon: <Code size={16} />, href: 'https://github.com', brand: 'github' },
+                { label: 'LinkedIn', icon: <Briefcase size={16} />, href: 'https://linkedin.com', brand: 'linkedin' },
+                { label: 'Twitter', icon: <MessageCircle size={16} />, href: 'https://twitter.com', brand: 'twitter' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                   className={`${styles.socialLink} ${styles[s.brand]}`}>
+                   className={`${styles.socialLink} ${styles[s.brand]}`} aria-label={s.label} title={s.label}>
                   <span style={{ display: 'flex' }}>{s.icon}</span> {s.label}
                 </a>
               ))}
