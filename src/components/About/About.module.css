@@ -1,0 +1,134 @@
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.illustrationCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sketchCard {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.sketch {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(6px 6px 0px var(--ink));
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.sketchCard:hover .sketch {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.sketchLabel {
+  font-family: var(--font-doodle);
+  font-size: 1.2rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 1rem;
+  transform: rotate(3deg);
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.bio {
+  font-size: 1.15rem;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.factCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-width: 2.5px;
+  background: var(--paper);
+  transform: rotate(random(-2deg, 2deg));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.factCard:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+.factCard:nth-child(odd) {
+  transform: rotate(-1.5deg);
+}
+
+.factCard:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 6px 6px 0px var(--ink);
+  z-index: 2;
+}
+
+.factEmoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.factLabel {
+  font-family: var(--font-doodle);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink-light);
+  line-height: 1.2;
+}
+
+.factValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .illustrationCol {
+    order: -1;
+  }
+  
+  .sketchCard {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 500px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+}

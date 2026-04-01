@@ -1,0 +1,140 @@
+.projects {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+/* Washi tape decorations */
+.tapeTopLeft,
+.tapeBottomRight {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background: var(--accent-yellow);
+  opacity: 0.6;
+  z-index: 0;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.tapeTopLeft {
+  top: 20px;
+  left: -40px;
+  transform: rotate(-45deg);
+}
+
+.tapeBottomRight {
+  bottom: 20px;
+  right: -40px;
+  transform: rotate(-45deg);
+  background: var(--accent-pink);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.card:nth-child(even) { transform: rotate(1deg); }
+.card:nth-child(odd) { transform: rotate(-1.5deg); }
+
+.card:hover {
+  transform: translateY(-8px) rotate(0deg);
+  box-shadow: var(--shadow-ink-lg);
+  z-index: 2;
+}
+
+/* Dynamic top borders inside doodle box */
+.card.pink { border-top-width: 8px; border-top-color: var(--accent-pink); }
+.card.blue { border-top-width: 8px; border-top-color: var(--accent-blue); }
+.card.green { border-top-width: 8px; border-top-color: var(--accent-green); }
+.card.yellow { border-top-width: 8px; border-top-color: var(--accent-yellow); }
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.folders {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.links a:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.cardTitle {
+  font-family: var(--font-doodle);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 1.05rem;
+  color: var(--ink-light);
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-doodle);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.2em 0.6em;
+  border: 1.5px solid var(--ink);
+  background: var(--cream);
+  box-shadow: 2px 2px 0 var(--ink);
+  border-radius: 4px;
+}
+
+.more {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

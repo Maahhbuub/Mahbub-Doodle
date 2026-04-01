@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #faf6f0;
+  --ink: #1a1a2e;
+  --ink-light: #2d2d44;
+  --accent-yellow: #ffd60a;
+  --accent-pink: #ff6b9d;
+  --accent-blue: #4ecdc4;
+  --accent-green: #95e1a5;
+  --accent-orange: #ff9a3c;
+  --accent-purple: #c77dff;
+  --paper: #fffdf7;
+  --paper-dark: #f5f0e8;
+  --border-ink: #1a1a2e;
+  --shadow-ink: 4px 4px 0px #1a1a2e;
+  --shadow-ink-lg: 6px 6px 0px #1a1a2e;
+
+  --font-doodle: 'Caveat', cursive;
+  --font-body: 'Patrick Hand', cursive;
+  --font-accent: 'Kalam', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Doodle paper texture via repeating lines */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(176, 196, 222, 0.15) 31px,
+      rgba(176, 196, 222, 0.15) 32px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+  border-left: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border-radius: 0;
+}
+
+/* Doodle box style */
+.doodle-box {
+  border: 3px solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-ink);
+  position: relative;
+}
+
+/* Wobbly underline */
+.wobbly-underline {
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='8'%3E%3Cpath d='M0,4 Q12.5,0 25,4 Q37.5,8 50,4 Q62.5,0 75,4 Q87.5,8 100,4' fill='none' stroke='%23ffd60a' stroke-width='3'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 100px 8px;
+  padding-bottom: 6px;
+}
+
+/* Section headings */
+.section-title {
+  font-family: var(--font-doodle);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  position: relative;
+  display: inline-block;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--ink-light);
+  opacity: 0.8;
+}
+
+/* Squiggly divider */
+.squiggle {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Animations */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scribble {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes stamp {
+  0% { transform: scale(1.5) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(0.95) rotate(2deg); opacity: 1; }
+  80% { transform: scale(1.03) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Button base */
+.btn-doodle {
+  font-family: var(--font-doodle);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6em 1.4em;
+  border: 3px solid var(--ink);
+  background: var(--accent-yellow);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  border-radius: 2px;
+}
+
+.btn-doodle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-ink-lg);
+}
+
+.btn-doodle:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn-doodle.outline {
+  background: transparent;
+}
+
+.btn-doodle.pink { background: var(--accent-pink); }
+.btn-doodle.blue { background: var(--accent-blue); }
+.btn-doodle.green { background: var(--accent-green); }
+.btn-doodle.purple { background: var(--accent-purple); }
+
+/* Tag/badge */
+.doodle-tag {
+  font-family: var(--font-doodle);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border: 2px solid var(--ink);
+  background: var(--accent-yellow);
+  display: inline-block;
+  box-shadow: 2px 2px 0px var(--ink);
+  border-radius: 2px;
+}
+
+/* Section wrapper */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Highlight tape */
+.highlight-tape {
+  display: inline;
+  background: var(--accent-yellow);
+  padding: 0 4px;
+  position: relative;
+  z-index: 0;
+}
+
+.highlight-tape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-yellow);
+  opacity: 0.4;
+  transform: skewX(-3deg) scaleX(1.02);
+  z-index: -1;
+}

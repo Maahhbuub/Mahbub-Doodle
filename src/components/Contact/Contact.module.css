@@ -1,0 +1,198 @@
+.contact {
+  background-color: var(--cream);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 8rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.title {
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.desc {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--ink-light);
+  max-width: 480px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.infoIcon {
+  font-size: 1.8rem;
+}
+
+.infoLink {
+  font-family: var(--font-doodle);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 3px dashed var(--accent-yellow);
+  transition: transform 0.2s ease, color 0.2s;
+}
+
+.infoLink:hover {
+  transform: translateX(10px);
+  color: var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+.planeWrapper {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  opacity: 0.7;
+}
+
+.plane {
+  width: 100%;
+  height: 100%;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+.trail {
+  position: absolute;
+  bottom: 0px;
+  left: -80px;
+  width: 150px;
+  height: 100px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.formCol {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem 2.5rem;
+  background-color: var(--paper-dark);
+  transform: rotate(1.5deg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  box-shadow: 8px 8px 0 var(--ink);
+  transition: transform 0.3s ease;
+}
+
+.form:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.pin {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  z-index: 2;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.formTitle {
+  font-family: var(--font-doodle);
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-doodle);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.input,
+.textarea {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border-radius: 2px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--accent-blue);
+  transform: translate(-2px, -2px);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Notebook lines for textarea */
+.textarea {
+  background-image: repeating-linear-gradient(transparent, transparent 1.6rem, rgba(0,0,0,0.1) 1.6rem, rgba(0,0,0,0.1) 1.7rem);
+  line-height: 1.7rem;
+  padding-top: 0.5rem;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .planeWrapper {
+    display: none;
+  }
+  
+  .form {
+    transform: rotate(0);
+  }
+}
