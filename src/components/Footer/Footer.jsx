@@ -25,6 +25,7 @@ export default function Footer() {
               <h4>Navigation</h4>
               <a href="#about">About</a>
               <a href="#skills">Skills</a>
+              <a href="#competitive-programming">Brain Games</a>
               <a href="#projects">Projects</a>
               <a href="#experience">Experience</a>
             </div>
