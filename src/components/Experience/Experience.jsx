@@ -33,9 +33,6 @@ export default function Experience() {
     <section className={`section ${styles.experience}`} id="experience">
       <div className="container">
         <div className={styles.header}>
-          <span className="doodle-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            My Journey <MapPinned size={16} />
-          </span>
           <h2 className="section-title">
             <span className="wobbly-underline">Experience</span>
           </h2>

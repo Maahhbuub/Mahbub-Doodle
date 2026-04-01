@@ -12,9 +12,6 @@ export default function Contact() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.textCol}>
-             <span className="doodle-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-               Get in Touch <Mailbox size={16} />
-             </span>
              <h2 className={`section-title ${styles.title}`}>
                Let's <span className="highlight-tape">Connect</span>
              </h2>

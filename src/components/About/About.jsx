@@ -21,9 +21,6 @@ export default function About() {
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className={styles.header}>
-          <span className="doodle-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            About Me <User size={16} />
-          </span>
           <h2 className="section-title">
             Behind the <span className="highlight-tape">Code</span>
           </h2>

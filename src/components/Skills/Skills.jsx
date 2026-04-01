@@ -19,9 +19,6 @@ export default function Skills() {
     <section className={`section ${styles.skills}`} id="skills">
       <div className="container">
         <div className={styles.header}>
-          <span className="doodle-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            My Arsenal <Swords size={16} />
-          </span>
           <h2 className="section-title">
             Skills & <span className="wobbly-underline">Tools</span>
           </h2>

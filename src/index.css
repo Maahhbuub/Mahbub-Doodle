@@ -182,18 +182,7 @@ body::before {
 .btn-doodle.green { background: var(--accent-green); }
 .btn-doodle.purple { background: var(--accent-purple); }
 
-/* Tag/badge */
-.doodle-tag {
-  font-family: var(--font-doodle);
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.25em 0.75em;
-  border: 2px solid var(--ink);
-  background: var(--accent-yellow);
-  display: inline-block;
-  box-shadow: 2px 2px 0px var(--ink);
-  border-radius: 2px;
-}
+
 
 /* Section wrapper */
 .section {

@@ -50,9 +50,6 @@ export default function Projects() {
 
       <div className="container">
         <div className={styles.header}>
-          <span className="doodle-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            My Work <Briefcase size={16} />
-          </span>
           <h2 className="section-title">
             Featured <span className="highlight-tape">Projects</span>
           </h2>
