@@ -1,16 +1,41 @@
-# React + Vite
+# Mahbub's Developer Portfolio 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A creative, hand-drawn and doodle-themed personal developer portfolio built with React and Vite.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Hand-drawn Aesthetic:** Custom doodle styles using CSS masks, SVGs, and wobbly borders.
+- **Responsive Design:** Looks great on desktop, tablet, and mobile devices.
+- **Sections:**
+    - **Hero:** Animated typewriter text and floating doodles.
+    - **Behind the Code:** Notebook-style bio and sticky-note facts.
+    - **Skills:** Sticker-style skill badges.
+    - **Projects:** Polaroid & sketch-style project showcase.
+    - **Experience:** Custom timeline with a sketchbook feel.
+    - **Contact:** Quirky paper-style contact form.
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling:** Vanilla CSS (CSS Modules) + Custom CSS Variables
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Fonts:** Caveat, Patrick Hand, and Kalam from Google Fonts
 
-## Expanding the ESLint configuration
+## 🛠️ Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in your browser:**
+   Navigate to `http://localhost:5173`
+
+## 💡 Design Inspiration
+
+The styling relies heavily on CSS `border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;` and SVG-based path animation to give everything a playful, imperfect, hand-drawn look.
