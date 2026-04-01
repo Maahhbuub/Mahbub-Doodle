@@ -4,7 +4,7 @@ import styles from './Contact.module.css';
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('This is a doodle portfolio demo! Imagine the form was submitted with magical paper airplanes.');
+    alert('This is under development. Please contact me via email or phone.');
   };
 
   return (

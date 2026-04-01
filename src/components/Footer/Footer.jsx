@@ -17,7 +17,7 @@ export default function Footer() {
               <span className={styles.logoName}>Mahbub</span>
               <span className={styles.logoSketch}>{'/>'}</span>
             </a>
-            <p className={styles.tagline}>Building the web, one doodle at a time.</p>
+            <p className={styles.tagline}>Building the web, and enjoying the coffee!!</p>
           </div>
 
           <div className={styles.links}>

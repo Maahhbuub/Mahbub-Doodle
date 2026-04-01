@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Sparkles, Terminal, Code, Target, Rocket, FileText, Briefcase, MessageCircle } from 'lucide-react';
 import styles from './Hero.module.css';
 
-const roles = ['Software Engineer', 'React Developer', 'Problem Solver', 'Coffee Addict', 'Bug Slayer'];
+const roles = ['Software Engineer', 'React Developer', 'Competitive Programmer', 'Coffee Addict', 'Noob Gamer'];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
