@@ -96,13 +96,13 @@
 
 .form {
   width: 100%;
-  max-width: 450px;
-  padding: 3rem 2.5rem;
+  max-width: 420px;
+  padding: 2rem 2rem;
   background-color: var(--paper-dark);
   transform: rotate(1.5deg);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   box-shadow: 8px 8px 0 var(--ink);
   transition: transform 0.3s ease;
@@ -165,7 +165,7 @@
 
 .textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 90px;
 }
 
 /* Notebook lines for textarea */
