@@ -36,6 +36,7 @@ export default function Experience() {
           <h2 className="section-title">
             <span className="wobbly-underline">Experience</span>
           </h2>
+          <p className="section-subtitle">My professional journey and the impact I've made.</p>
         </div>
 
         <div className={styles.timeline}>

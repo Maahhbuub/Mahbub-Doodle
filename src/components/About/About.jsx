@@ -24,6 +24,7 @@ export default function About() {
           <h2 className="section-title">
             Behind the <span className="highlight-tape">Code</span>
           </h2>
+          <p className="section-subtitle">Who I am when I'm not debugging.</p>
         </div>
 
         <div className={styles.contentWrapper}>
