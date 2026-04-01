@@ -29,15 +29,15 @@ const projects = [
     link: '#',
     repo: '#',
   },
-  {
-    id: 4,
-    title: 'Terminal Portfolio',
-    desc: 'A geeky, interactive portfolio that looks and feels exactly like a Linux terminal. Try typing "help"!',
-    tags: ['Vanilla JS', 'HTML5', 'CSS3'],
-    color: 'yellow',
-    link: '#',
-    repo: '#',
-  },
+  // {
+  //   id: 4,
+  //   title: 'Terminal Portfolio',
+  //   desc: 'A geeky, interactive portfolio that looks and feels exactly like a Linux terminal. Try typing "help"!',
+  //   tags: ['Vanilla JS', 'HTML5', 'CSS3'],
+  //   color: 'yellow',
+  //   link: '#',
+  //   repo: '#',
+  // },
 ];
 
 export default function Projects() {
