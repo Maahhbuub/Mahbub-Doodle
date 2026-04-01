@@ -166,7 +166,7 @@
   min-height: 2.5rem;
 }
 
-.rolePrefix { color: var(--ink-light); }
+.rolePrefix { color: var(--ink-light); font-size: 2.1rem;  }
 
 .roleTyped {
   color: var(--accent-pink);
@@ -180,7 +180,7 @@
 }
 
 .bio {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--ink-light);
   max-width: 480px;
   line-height: 1.8;
