@@ -1,17 +1,30 @@
-import { Swords, FileCode2, Atom, Hexagon, Type, Paintbrush, Triangle, GitBranch, PenTool, Leaf, Network } from 'lucide-react';
+import { Swords, FileCode2, Atom, Hexagon, Type, Paintbrush, Triangle, GitBranch, PenTool, Leaf, Network, Server, Flame, Database, Wind, Terminal, Coffee } from 'lucide-react';
 import styles from './Skills.module.css';
 
 const skills = [
-  { name: 'JavaScript', icon: <FileCode2 size={16} />, color: 'yellow' },
   { name: 'React', icon: <Atom size={16} />, color: 'blue' },
+  { name: 'React Native', icon: <Atom size={16} />, color: 'blue' },
+  { name: 'JavaScript', icon: <FileCode2 size={16} />, color: 'yellow' },
   { name: 'Node.js', icon: <Hexagon size={16} />, color: 'green' },
+  { name: 'Express.js', icon: <Server size={16} />, color: 'yellow' },
   { name: 'TypeScript', icon: <Type size={16} />, color: 'blue' },
-  { name: 'CSS/HTML', icon: <Paintbrush size={16} />, color: 'pink' },
-  { name: 'Next.js', icon: <Triangle size={16} />, color: 'purple' },
-  { name: 'Git', icon: <GitBranch size={16} />, color: 'purple' },
-  { name: 'Figma', icon: <PenTool size={16} />, color: 'pink' },
+  { name: 'Firebase', icon: <Flame size={16} />, color: 'pink' },
+  { name: 'Supabase', icon: <Database size={16} />, color: 'green' },
   { name: 'MongoDB', icon: <Leaf size={16} />, color: 'green' },
-  { name: 'GraphQL', icon: <Network size={16} />, color: 'pink' },
+  { name: 'Redis', icon: <Database size={16} />, color: 'pink' },
+  { name: 'PostgreSQL', icon: <Database size={16} />, color: 'blue' },
+  { name: 'MySQL', icon: <Database size={16} />, color: 'purple' },
+  { name: 'Tailwind CSS', icon: <Wind size={16} />, color: 'blue' },
+  { name: 'C', icon: <FileCode2 size={16} />, color: 'blue' },
+  { name: 'C++', icon: <FileCode2 size={16} />, color: 'blue' },
+  { name: 'Python', icon: <Terminal size={16} />, color: 'yellow' },
+  { name: 'Java', icon: <Coffee size={16} />, color: 'yellow' },
+  { name: 'PHP', icon: <Server size={16} />, color: 'purple' },
+  // { name: 'CSS/HTML', icon: <Paintbrush size={16} />, color: 'pink' },
+  // { name: 'Next.js', icon: <Triangle size={16} />, color: 'purple' },
+  { name: 'Git', icon: <GitBranch size={16} />, color: 'purple' },
+  // { name: 'Figma', icon: <PenTool size={16} />, color: 'pink' },
+  // { name: 'GraphQL', icon: <Network size={16} />, color: 'pink' },
 ];
 
 export default function Skills() {

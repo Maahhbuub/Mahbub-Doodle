@@ -4,40 +4,58 @@ import styles from './Projects.module.css';
 const projects = [
   {
     id: 1,
-    title: 'DoodleTask',
-    desc: 'A minimalist task manager designed entirely with a hand-drawn sketch aesthetic. Keeps your chaos organized in style.',
-    tags: ['React', 'CSS Modules', 'Firebase'],
+    title: 'SatheCholo',
+    desc: 'A ride-sharing platform that integrates intra-city ride sharing and inter-city carpooling.',
+    tags: ['React Native', 'Express.Js', 'Redis', 'Firebase', 'PostgreSQL'],
     color: 'pink',
-    link: '#',
-    repo: '#',
+    link: 'https://demo-link.com/',
+    repo: 'https://github.com/SatheCholo/sathecholo-app',
   },
   {
     id: 2,
-    title: 'CodeSnippet.io',
-    desc: 'Share and discover beautiful, syntactic-sugar code snippets. Features syntax highlighting and one-click copy.',
-    tags: ['Next.js', 'Tailwind', 'PostgreSQL'],
+    title: 'DirectEdge',
+    desc: 'Built a 3-sided platform connecting farmers, distributors, and retailers to reduce supply chain inefficiencies.',
+    tags: ['Python', 'PHP', 'JavaScript', 'MySQL'],
     color: 'blue',
-    link: '#',
-    repo: '#',
+    link: 'https://demo-link.com/',
+    repo: 'https://github.com/TashinParvez/direct-edge',
   },
   {
     id: 3,
-    title: 'WeatherSketch',
-    desc: 'Real-time weather data displayed with dynamically generated illustrations based on current conditions.',
-    tags: ['TypeScript', 'OpenWeather API'],
+    title: 'Wanderlust',
+    desc: 'Developed a full-stack rental platform for discovering and managing accommodation listings.',
+    tags: ['EJS', 'ExpressJs', 'MongoDB', 'Cloudinary'],
     color: 'green',
-    link: '#',
-    repo: '#',
+    link: 'https://wanderlust-ltah.onrender.com/',
+    repo: 'https://github.com/Maahhbuub/Wanderlust',
   },
-  // {
-  //   id: 4,
-  //   title: 'Terminal Portfolio',
-  //   desc: 'A geeky, interactive portfolio that looks and feels exactly like a Linux terminal. Try typing "help"!',
-  //   tags: ['Vanilla JS', 'HTML5', 'CSS3'],
-  //   color: 'yellow',
-  //   link: '#',
-  //   repo: '#',
-  // },
+  {
+    id: 4,
+    title: 'Smaller',
+    desc: 'Built a full-stack URL shortening platform with QR code generation, password-protected links, and AI-based click analysis to track and predict user engagement.',
+    tags: ['React', 'ExpressJs', 'MongoDB', 'Redis'],
+    color: 'yellow',
+    link: 'https://demo-link.com/',
+    repo: 'https://github.com/Maahhbuub/Shorten',
+  },
+  {
+    id: 5,
+    title: 'Cook Corner',
+    desc: 'A full-featured web platform that helps users discover recipes, plan meals, track nutrition, and manage kitchen activities more efficiently.',
+    tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
+    color: 'blue',
+    link: 'https://demo-link.com/',
+    repo: 'https://github.com/TashinParvez/Cook-Corner',
+  },
+  {
+    id: 6,
+    title: 'ExeCode',
+    desc: 'ExeCode is a comprehensive online competitive programming platform that provides a complete ecosystem for competitive programming.',
+    tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
+    color: 'pink',
+    link: 'https://demo-link.com/',
+    repo: 'https://github.com/Maahhbuub/ExeCode',
+  }
 ];
 
 export default function Projects() {
@@ -107,7 +125,7 @@ export default function Projects() {
         </div>
 
         <div className={styles.more}>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="btn-doodle">
+          <a href="https://github.com/Maahhbuub" target="_blank" rel="noreferrer" className="btn-doodle">
             View All on GitHub
           </a>
         </div>

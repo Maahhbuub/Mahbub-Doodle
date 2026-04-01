@@ -103,9 +103,9 @@ export default function Hero() {
 
             <div className={styles.socials}>
               {[
-                { label: 'GitHub', icon: <Code size={16} />, href: 'https://github.com', brand: 'github' },
-                { label: 'LinkedIn', icon: <Briefcase size={16} />, href: 'https://linkedin.com', brand: 'linkedin' },
-                { label: 'Twitter', icon: <MessageCircle size={16} />, href: 'https://twitter.com', brand: 'twitter' },
+                { label: 'GitHub', icon: <Code size={16} />, href: 'https://github.com/Maahhbuub', brand: 'github' },
+                { label: 'LinkedIn', icon: <Briefcase size={16} />, href: 'https://www.linkedin.com/in/maahhbuub/', brand: 'linkedin' },
+                { label: 'Twitter', icon: <MessageCircle size={16} />, href: 'https://x.com/Maahhbuub', brand: 'twitter' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   className={`${styles.socialLink} ${styles[s.brand]}`} aria-label={s.label} title={s.label}>

@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       {/* Torn paper edge effect */}
       <div className={styles.tornEdge} aria-hidden="true"></div>
-      
+
       <div className="container">
         <div className={styles.content}>
           <div className={styles.brand}>
@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
             <p className={styles.tagline}>Building the web, one doodle at a time.</p>
           </div>
-          
+
           <div className={styles.links}>
             <div className={styles.linkGroup}>
               <h4>Navigation</h4>
@@ -28,17 +28,18 @@ export default function Footer() {
               <a href="#projects">Projects</a>
               <a href="#experience">Experience</a>
             </div>
-            
+
             <div className={styles.linkGroup}>
               <h4>Socials</h4>
-              <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>
-              <a href="https://codepen.io" target="_blank" rel="noreferrer">CodePen</a>
+              <a href="https://github.com/Maahhbuub" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/maahhbuub" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://twitter.com/Maahhbuub" target="_blank" rel="noreferrer">Twitter</a>
+              <a href="https://instagram.com/maahhbuub" target="_blank" rel="noreferrer">Instagram</a>
+              {/* <a href="https://codepen.io/" target="_blank" rel="noreferrer">CodePen</a> */}
             </div>
           </div>
         </div>
-        
+
         <div className={styles.copyright}>
           <p style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
             &copy; {currentYear} Mahbub. Designed with <span className={styles.heart} style={{ display: 'flex' }}><Heart size={16} fill="currentColor" /></span> and way too much caffeine <span style={{ display: 'flex' }}><Coffee size={16} /></span>

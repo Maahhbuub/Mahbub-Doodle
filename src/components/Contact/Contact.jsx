@@ -23,11 +23,11 @@ export default function Contact() {
              <div className={styles.contactInfo}>
                <div className={styles.infoRow}>
                  <span className={styles.infoIcon} style={{ display: 'flex', color: 'var(--ink)' }}><Mail size={24} /></span>
-                 <a href="mailto:hello@mahbub.dev" className={styles.infoLink}>hello@mahbub.dev</a>
+                 <a href="mailto:mrahman221441@gmail.com" className={styles.infoLink}>mrahman221441@gmail.com</a>
                </div>
                <div className={styles.infoRow}>
                  <span className={styles.infoIcon} style={{ display: 'flex', color: 'var(--ink)' }}><Smartphone size={24} /></span>
-                 <a href="tel:+8801234567890" className={styles.infoLink}>+880 123 456 7890</a>
+                 <a href="tel:+8801744177620" className={styles.infoLink}>+880 1744 177 620</a>
                </div>
              </div>
              
