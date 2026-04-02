@@ -22,6 +22,26 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActive(`#${entry.target.id}`);
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    navLinks.forEach(link => {
+      const sectionId = link.href.substring(1);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNav = (href) => {
     setActive(href);
     setOpen(false);
