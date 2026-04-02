@@ -272,3 +272,9 @@ body::before {
   transform: skewX(-3deg) scaleX(1.02);
   z-index: -1;
 }
+
+.project-icon{
+  display: inline-block;
+  margin-left: 3px;
+  vertical-align: middle;
+}

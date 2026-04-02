@@ -1,4 +1,4 @@
-import { Briefcase, Code, ExternalLink } from 'lucide-react';
+import { Annoyed, Code, ExternalLink } from 'lucide-react';
 import styles from './Projects.module.css';
 
 const projects = [
@@ -73,7 +73,8 @@ export default function Projects() {
           </h2>
           <p className="section-subtitle">
             A selection of stuff I've built.
-            <br />Mostly it works. Sometimes it breaks. :)
+            <br />Mostly it works. Sometimes it breaks
+            <span className='project-icon'><Annoyed size={12} /></span>
           </p>
         </div>
 
