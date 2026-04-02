@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Sparkles, Terminal, Code, Target, Rocket, FileText, Briefcase, MessageCircle } from 'lucide-react';
+import { Sparkles, Terminal, Code, Target, Rocket, FileText, Briefcase, ChartNoAxesColumn } from 'lucide-react';
 import styles from './Hero.module.css';
 
 const roles = ['Software Engineer', 'React Developer', 'Competitive Programmer', 'Coffee Addict', 'Noob Gamer'];
@@ -105,7 +105,7 @@ export default function Hero() {
               {[
                 { label: 'GitHub', icon: <Code size={16} />, href: 'https://github.com/Maahhbuub', brand: 'github' },
                 { label: 'LinkedIn', icon: <Briefcase size={16} />, href: 'https://www.linkedin.com/in/maahhbuub/', brand: 'linkedin' },
-                { label: 'Codeforces', icon: <MessageCircle size={16} />, href: 'https://codeforces.com/profile/TribalLiege', brand: 'twitter' },
+                { label: 'Codeforces', icon: <ChartNoAxesColumn size={16} />, href: 'https://codeforces.com/profile/TribalLiege', brand: 'codeforces' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   className={`${styles.socialLink} ${styles[s.brand]}`} aria-label={s.label} title={s.label}>
