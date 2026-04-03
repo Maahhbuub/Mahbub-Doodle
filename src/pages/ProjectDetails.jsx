@@ -13,7 +13,9 @@ const ProjectDetails = () => {
         return (
             <div className={`container ${styles.notFound}`}>
                 <h2 className="section-title">Project Not Found</h2>
-                <Link to="/projects" className="btn-doodle">Back to Projects</Link>
+                <Link to="/projects" className={styles.backBtn}>
+                    <ArrowLeft size={20} /> Back to All Projects
+                </Link>
             </div>
         );
     }
