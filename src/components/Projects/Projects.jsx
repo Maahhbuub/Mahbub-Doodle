@@ -1,63 +1,9 @@
-import { Annoyed, Code, ExternalLink } from 'lucide-react';
+import { Annoyed, Code, ExternalLink, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './Projects.module.css';
+import { projects } from '../../data/projects';
 
-const projects = [
-  {
-    id: 1,
-    title: 'SatheCholo',
-    desc: 'A ride-sharing platform that integrates intra-city ride sharing and inter-city carpooling.',
-    tags: ['React Native', 'Express.Js', 'Redis', 'Firebase', 'PostgreSQL'],
-    color: 'pink',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/SatheCholo/sathecholo-app',
-  },
-  {
-    id: 2,
-    title: 'DirectEdge',
-    desc: 'Built a 3-sided platform connecting farmers, distributors, and retailers to reduce supply chain inefficiencies.',
-    tags: ['Python', 'PHP', 'JavaScript', 'MySQL'],
-    color: 'blue',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/TashinParvez/direct-edge',
-  },
-  {
-    id: 3,
-    title: 'Wanderlust',
-    desc: 'Developed a full-stack rental platform for discovering and managing accommodation listings.',
-    tags: ['EJS', 'ExpressJs', 'MongoDB', 'Cloudinary'],
-    color: 'green',
-    link: 'https://wanderlust-ltah.onrender.com/',
-    repo: 'https://github.com/Maahhbuub/Wanderlust',
-  },
-  {
-    id: 4,
-    title: 'Smaller',
-    desc: 'Built a full-stack URL shortening platform with QR code generation, password-protected links, and AI-based click analysis to track and predict user engagement.',
-    tags: ['React', 'ExpressJs', 'MongoDB', 'Redis'],
-    color: 'yellow',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/Maahhbuub/Shorten',
-  },
-  {
-    id: 5,
-    title: 'Cook Corner',
-    desc: 'A full-featured web platform that helps users discover recipes, plan meals, track nutrition, and manage kitchen activities more efficiently.',
-    tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
-    color: 'blue',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/TashinParvez/Cook-Corner',
-  },
-  {
-    id: 6,
-    title: 'ExeCode',
-    desc: 'ExeCode is a comprehensive online competitive programming platform that provides a complete ecosystem for competitive programming.',
-    tags: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap'],
-    color: 'pink',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/Maahhbuub/ExeCode',
-  }
-];
+
 
 export default function Projects({ limit, showMoreBtn }) {
   return (
@@ -121,6 +67,10 @@ export default function Projects({ limit, showMoreBtn }) {
                     <span key={t} className={styles.tag}>{t}</span>
                   ))}
                 </div>
+
+                <Link to={`/projects/${p.id}`} className={styles.viewDetails}>
+                  View Details <ArrowRight size={14} />
+                </Link>
               </div>
             </article>
           ))}

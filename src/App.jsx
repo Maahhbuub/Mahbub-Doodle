@@ -6,6 +6,7 @@ import ProjectsLayout from './layouts/ProjectsLayout';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
 
 import ScrollToTop from './helper/ScrollToTop';
 
@@ -23,6 +24,7 @@ function App() {
         {/* Separate Website */}
         <Route element={<ProjectsLayout />}>
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
         </Route>
 
       </Routes>
