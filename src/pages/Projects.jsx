@@ -1,9 +1,12 @@
+import ProjectsComponent from '../components/Projects/Projects';
 
 function Projects() {
     return (
-        <div>
-            <h1>Projects</h1>
-        </div>
+        <>
+            <main>
+                <ProjectsComponent />
+            </main>
+        </>
     );
 }
 

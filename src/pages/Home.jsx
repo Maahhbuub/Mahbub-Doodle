@@ -13,7 +13,7 @@ function Home() {
             <About />
             <Skills />
             <CompetitiveProgramming />
-            <Projects />
+            <Projects limit={3} showMoreBtn={true} />
             <Experience />
             <Contact />
         </>

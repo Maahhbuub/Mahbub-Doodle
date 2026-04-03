@@ -1,4 +1,5 @@
 import { Annoyed, Code, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './Projects.module.css';
 
 const projects = [
@@ -58,7 +59,7 @@ const projects = [
   }
 ];
 
-export default function Projects() {
+export default function Projects({ limit, showMoreBtn }) {
   return (
     <section className={`section ${styles.projects}`} id="projects"
       style={{ background: 'var(--paper)' }}>
@@ -79,7 +80,7 @@ export default function Projects() {
         </div>
 
         <div className={styles.grid}>
-          {projects.map((p, i) => (
+          {(limit ? projects.slice(0, limit) : projects).map((p, i) => (
             <article key={p.id} className={`doodle-box ${styles.card}`}>
 
               {/* Illustration Header representing a sketch placeholder */}
@@ -126,9 +127,15 @@ export default function Projects() {
         </div>
 
         <div className={styles.more}>
-          <a href="https://github.com/Maahhbuub" target="_blank" rel="noreferrer" className="btn-doodle">
-            View All on GitHub
-          </a>
+          {showMoreBtn ? (
+            <Link to="/projects" className="btn-doodle">
+              Show More Projects
+            </Link>
+          ) : (
+            <a href="https://github.com/Maahhbuub" target="_blank" rel="noreferrer" className="btn-doodle">
+              View All on GitHub
+            </a>
+          )}
         </div>
       </div>
     </section>
