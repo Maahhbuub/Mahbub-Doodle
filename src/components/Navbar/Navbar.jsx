@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
-const navLinks = [
+const portfolioLinks = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#competitive-programming', label: 'Brain Games' },
@@ -11,7 +11,17 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
-export default function Navbar() {
+const projectLinks = [
+  { href: '/projects', label: 'All Projects' },
+  { href: '/projects/favorites', label: 'Favorites' },
+  { href: '/', label: 'Back Home' },
+  { href: '#contact', label: 'Contact' },
+
+];
+
+export default function Navbar({ variant = 'portfolio' }) {
+  const navLinks = variant === 'portfolio' ? portfolioLinks : projectLinks;
+
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('');
@@ -50,7 +60,7 @@ export default function Navbar() {
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <a href="#hero" className={styles.logo} onClick={() => handleNav('')}>
+        <a href="/#hero" className={styles.logo} onClick={() => handleNav('')}>
           <span className={styles.logoSketch}>{'<'}</span>
           <span className={styles.logoName}>Mahbub</span>
           <span className={styles.logoSketch}>{'/>'}</span>

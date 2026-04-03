@@ -1,4 +1,5 @@
 import ProjectsComponent from '../components/Projects/Projects';
+import Contact from '../components/Contact/Contact';
 
 function Projects() {
     return (
@@ -6,6 +7,7 @@ function Projects() {
             <main>
                 <ProjectsComponent />
             </main>
+            <Contact />
         </>
     );
 }

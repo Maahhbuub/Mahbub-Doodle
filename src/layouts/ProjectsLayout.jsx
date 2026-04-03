@@ -1,11 +1,14 @@
-// layouts/ProjectsLayout.jsx
 import { Outlet } from 'react-router-dom';
+
+import Navbar from '../components/Navbar/Navbar';
 
 export default function ProjectsLayout() {
     return (
-        <main>
-            {/* Different UI / no navbar */}
-            <Outlet />
-        </main>
+        <>
+            <Navbar variant="projects" />
+            <main>
+                <Outlet />
+            </main>
+        </>
     );
 }
