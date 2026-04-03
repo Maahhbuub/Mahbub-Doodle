@@ -4,9 +4,7 @@ import Contact from '../components/Contact/Contact';
 function Projects() {
     return (
         <>
-            <main>
-                <ProjectsComponent />
-            </main>
+            <ProjectsComponent />
             <Contact />
         </>
     );

@@ -6,7 +6,7 @@ const portfolioLinks = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#competitive-programming', label: 'Brain Games' },
-  { href: '#projects', label: 'Projects' },
+  { href: '/projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -15,7 +15,7 @@ const projectLinks = [
   { href: '/projects', label: 'All Projects' },
   { href: '/projects/favorites', label: 'Favorites' },
   { href: '#contact', label: 'Contact' },
-  { href: '/', label: 'Back Home' },
+  { href: '/', label: 'Back to Home' },
 
 ];
 

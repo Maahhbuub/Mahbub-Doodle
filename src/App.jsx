@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import MainLayout from './layouts/MainLayout';
+import HomeLayout from './layouts/HomeLayout';
 import ProjectsLayout from './layouts/ProjectsLayout';
 
 import Home from './pages/Home';
@@ -16,12 +16,10 @@ function App() {
       <ScrollToTop />
       <Routes>
 
-        {/* Main Website */}
-        <Route element={<MainLayout />}>
+        <Route element={<HomeLayout />}>
           <Route path="/" element={<Home />} />
         </Route>
 
-        {/* Separate Website */}
         <Route element={<ProjectsLayout />}>
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
