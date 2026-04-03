@@ -13,10 +13,8 @@ const portfolioLinks = [
 
 const projectLinks = [
   { href: '/projects', label: 'All Projects' },
-  { href: '/projects/favorites', label: 'Favorites' },
   { href: '#contact', label: 'Contact' },
   { href: '/', label: 'Back to Home' },
-
 ];
 
 export default function Navbar({ variant = 'portfolio' }) {
