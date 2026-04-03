@@ -7,9 +7,12 @@ import ProjectsLayout from './layouts/ProjectsLayout';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 
+import ScrollToTop from './helper/ScrollToTop';
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
 
         {/* Main Website */}
