@@ -3,29 +3,40 @@ import { useLocation } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
-const portfolioLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#competitive-programming', label: 'Brain Games' },
-  { href: '/projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
+const NAV_ITEMS = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'competitive-programming', label: 'Brain Games' },
+  { id: 'projects', label: 'Projects', isPage: true },
+  { id: 'experience', label: 'Experience' },
 ];
 
-const projectLinks = [
-  { href: '/#about', label: 'About' },
-  { href: '/#skills', label: 'Skills' },
-  { href: '/#competitive-programming', label: 'Brain Games' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/#experience', label: 'Experience' },
-];
+function getNavLinks(variant) {
+  return NAV_ITEMS.map(({ id, label, isPage }) => {
+    if (isPage) return { href: '/projects', label };
+    const hash = `#${id}`;
+    return { href: variant === 'portfolio' ? hash : `/${hash}`, label };
+  });
+}
+
+function getSectionId(href) {
+  if (href === '/projects') return 'projects';
+  if (href.startsWith('/#')) return href.slice(2);
+  if (href.startsWith('#')) return href.slice(1);
+  return '';
+}
+
+function getInitialActive(location) {
+  return location.pathname === '/projects' ? '/projects' : (location.hash || '');
+}
 
 export default function Navbar({ variant = 'portfolio' }) {
-  const navLinks = variant === 'portfolio' ? portfolioLinks : projectLinks;
   const location = useLocation();
+  const navLinks = getNavLinks(variant);
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState(location.pathname === '/projects' ? '/projects' : (location.hash || ''));
+  const [active, setActive] = useState(() => getInitialActive(location));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -34,39 +45,29 @@ export default function Navbar({ variant = 'portfolio' }) {
   }, []);
 
   useEffect(() => {
-    setActive(location.pathname === '/projects' ? '/projects' : (location.hash || ''));
+    setActive(getInitialActive(location));
   }, [location]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          if (id === 'projects') {
-            setActive('/projects');
-          } else {
-            setActive(variant === 'portfolio' ? `#${id}` : `/#${id}`);
-          }
-        }
-      });
-    }, { rootMargin: '-20% 0px -60% 0px' });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const link = navLinks.find((l) => getSectionId(l.href) === entry.target.id);
+          if (link) setActive(link.href);
+        });
+      },
+      { rootMargin: '-20% 0px -60% 0px' }
+    );
 
-    navLinks.forEach(link => {
-      let sectionId = '';
-      if (link.href.startsWith('/#')) sectionId = link.href.substring(2);
-      else if (link.href.startsWith('#')) sectionId = link.href.substring(1);
-      else if (link.href === '/projects') sectionId = 'projects';
-
-      if (sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          observer.observe(element);
-        }
-      }
+    navLinks.forEach(({ href }) => {
+      const sectionId = getSectionId(href);
+      const el = sectionId && document.getElementById(sectionId);
+      if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [navLinks, variant]);
+  }, [navLinks]);
 
   const handleNav = (href) => {
     setActive(href);
@@ -93,19 +94,24 @@ export default function Navbar({ variant = 'portfolio' }) {
               {l.label}
             </a>
           ))}
-          <a href="/#contact" className={`btn-doodle pink ${styles.ctaBtn}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }} onClick={() => handleNav('/#contact')}>
+          <a
+            href="/#contact"
+            className={`btn-doodle pink ${styles.ctaBtn}`}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            onClick={() => handleNav('/#contact')}
+          >
             Hire Me <Mail size={18} />
           </a>
         </nav>
 
         <button
           className={`${styles.hamburger} ${open ? styles.hOpen : ''}`}
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle mobile menu"
         >
           <span /><span /><span />
         </button>
-      </div>
-    </header>
+      </div >
+    </header >
   );
 }
