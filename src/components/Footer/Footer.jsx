@@ -10,10 +10,11 @@ const portfolioLinks = [
 ];
 
 const projectLinks = [
-  { href: '/projects', label: 'All Projects' },
-  { href: '/projects/favorites', label: 'Favorites' },
-  { href: '/', label: 'Back Home' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#competitive-programming', label: 'Brain Games' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/#experience', label: 'Experience' },
 ];
 
 export default function Footer({ variant = 'portfolio' }) {
@@ -28,7 +29,7 @@ export default function Footer({ variant = 'portfolio' }) {
       <div className="container">
         <div className={styles.content}>
           <div className={styles.brand}>
-            <a href="#hero" className={styles.logo}>
+            <a href="/#hero" className={styles.logo}>
               <span className={styles.logoSketch}>{'<'}</span>
               <span className={styles.logoName}>Mahbub</span>
               <span className={styles.logoSketch}>{'/>'}</span>
@@ -60,7 +61,7 @@ export default function Footer({ variant = 'portfolio' }) {
             &copy; {currentYear} Mahbub. Designed with <span className={styles.heart} style={{ display: 'flex' }}><Heart size={16} fill="currentColor" /></span> and way too much caffeine <span style={{ display: 'flex' }}><Coffee size={16} /></span>
           </p>
           <div className={styles.backToTop}>
-            <a href="#hero" className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <a href="/#hero" className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ArrowUp size={16} /> Top
             </a>
           </div>
