@@ -3,8 +3,6 @@ import { projects } from '../data/projects';
 import { ArrowLeft, ExternalLink, Code, CheckCircle2 } from 'lucide-react';
 import styles from './ProjectDetails.module.css';
 
-import Contact from '../components/Contact/Contact';
-
 const ProjectDetails = () => {
     const { id } = useParams();
     const project = projects.find(p => p.id === parseInt(id));
@@ -92,7 +90,6 @@ const ProjectDetails = () => {
                 </div>
             </div>
             </div>
-            <Contact />
         </>
     );
 };

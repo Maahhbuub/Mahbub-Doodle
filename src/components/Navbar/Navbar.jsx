@@ -13,7 +13,6 @@ const portfolioLinks = [
 
 const projectLinks = [
   { href: '/projects', label: 'All Projects' },
-  { href: '#contact', label: 'Contact' },
   { href: '/', label: 'Back to Home' },
 ];
 
