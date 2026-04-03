@@ -74,7 +74,7 @@ export default function Navbar({ variant = 'portfolio' }) {
               {l.label}
             </a>
           ))}
-          <a href="#contact" className={`btn-doodle pink ${styles.ctaBtn}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }} onClick={() => handleNav('#contact')}>
+          <a href="/#contact" className={`btn-doodle pink ${styles.ctaBtn}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }} onClick={() => handleNav('/#contact')}>
             Hire Me <Mail size={18} />
           </a>
         </nav>
