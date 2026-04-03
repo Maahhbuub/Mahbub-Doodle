@@ -1,8 +1,9 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { ArrowLeft, ExternalLink, Code, CheckCircle2 } from 'lucide-react';
 import styles from './ProjectDetails.module.css';
+
+import Contact from '../components/Contact/Contact';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -18,6 +19,7 @@ const ProjectDetails = () => {
     }
 
     return (
+        <>
         <div className={`section ${styles.projectDetail}`}>
             <div className="container">
                 <Link to="/projects" className={styles.backBtn}>
@@ -87,7 +89,9 @@ const ProjectDetails = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+            <Contact />
+        </>
     );
 };
 
