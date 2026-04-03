@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
@@ -8,20 +9,23 @@ const portfolioLinks = [
   { href: '#competitive-programming', label: 'Brain Games' },
   { href: '/projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 const projectLinks = [
-  { href: '/projects', label: 'All Projects' },
-  { href: '/', label: 'Back to Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#competitive-programming', label: 'Brain Games' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/#experience', label: 'Experience' },
 ];
 
 export default function Navbar({ variant = 'portfolio' }) {
   const navLinks = variant === 'portfolio' ? portfolioLinks : projectLinks;
+  const location = useLocation();
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState(location.pathname === '/projects' ? '/projects' : (location.hash || ''));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -30,24 +34,39 @@ export default function Navbar({ variant = 'portfolio' }) {
   }, []);
 
   useEffect(() => {
+    setActive(location.pathname === '/projects' ? '/projects' : (location.hash || ''));
+  }, [location]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setActive(`#${entry.target.id}`);
+          const id = entry.target.id;
+          if (id === 'projects') {
+            setActive('/projects');
+          } else {
+            setActive(variant === 'portfolio' ? `#${id}` : `/#${id}`);
+          }
         }
       });
     }, { rootMargin: '-20% 0px -60% 0px' });
 
     navLinks.forEach(link => {
-      const sectionId = link.href.substring(1);
-      const element = document.getElementById(sectionId);
-      if (element) {
-        observer.observe(element);
+      let sectionId = '';
+      if (link.href.startsWith('/#')) sectionId = link.href.substring(2);
+      else if (link.href.startsWith('#')) sectionId = link.href.substring(1);
+      else if (link.href === '/projects') sectionId = 'projects';
+
+      if (sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observer.observe(element);
+        }
       }
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [navLinks, variant]);
 
   const handleNav = (href) => {
     setActive(href);
