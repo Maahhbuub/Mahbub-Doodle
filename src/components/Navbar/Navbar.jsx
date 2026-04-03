@@ -14,8 +14,8 @@ const portfolioLinks = [
 const projectLinks = [
   { href: '/projects', label: 'All Projects' },
   { href: '/projects/favorites', label: 'Favorites' },
-  { href: '/', label: 'Back Home' },
   { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Back Home' },
 
 ];
 
