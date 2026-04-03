@@ -1,7 +1,23 @@
 import { Heart, Coffee, ArrowUp } from 'lucide-react';
 import styles from './Footer.module.css';
 
-export default function Footer() {
+const portfolioLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#competitive-programming', label: 'Brain Games' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+];
+
+const projectLinks = [
+  { href: '/projects', label: 'All Projects' },
+  { href: '/projects/favorites', label: 'Favorites' },
+  { href: '/', label: 'Back Home' },
+  { href: '#contact', label: 'Contact' },
+];
+
+export default function Footer({ variant = 'portfolio' }) {
+  const navLinks = variant === 'portfolio' ? portfolioLinks : projectLinks;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,11 +39,9 @@ export default function Footer() {
           <div className={styles.links}>
             <div className={styles.linkGroup}>
               <h4>Navigation</h4>
-              <a href="#about">About</a>
-              <a href="#skills">Skills</a>
-              <a href="#competitive-programming">Brain Games</a>
-              <a href="#projects">Projects</a>
-              <a href="#experience">Experience</a>
+              {navLinks.map((item, i) => (
+                <a key={i} href={item.href}>{item.label}</a>
+              ))}
             </div>
 
             <div className={styles.linkGroup}>
