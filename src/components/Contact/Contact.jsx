@@ -75,17 +75,17 @@ export default function Contact() {
 
               <div className={styles.inputGroup}>
                 <label htmlFor="name" className={styles.label}>Your Name</label>
-                <input type="text" name="user_name" id="name" required className={styles.input} placeholder="John Doe" />
+                <input type="text" name="user_name" id="name" required className={styles.input} placeholder="Mahbub" />
               </div>
 
               <div className={styles.inputGroup}>
                 <label htmlFor="email" className={styles.label}>Your Email</label>
-                <input type="email" name="user_email" id="email" required className={styles.input} placeholder="john@example.com" />
+                <input type="email" name="user_email" id="email" required className={styles.input} placeholder="mahbub@example.com" />
               </div>
 
               <div className={styles.inputGroup}>
                 <label htmlFor="message" className={styles.label}>Message</label>
-                <textarea id="message" name="message" rows="4" required className={styles.textarea} placeholder="What's up?"></textarea>
+                <textarea id="message" name="message" rows="4" required className={styles.textarea} placeholder="What's up Dude?"></textarea>
               </div>
 
               {status && <p className={styles.statusMsg} style={{ color: 'var(--ink)', fontWeight: 'bold', marginBottom: '10px' }}>{status}</p>}
