@@ -6,13 +6,16 @@ const ScrollToTop = () => {
 
     useEffect(() => {
         if (!hash) {
-            window.scrollTo({ top: 0, behavior: "instant" });
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
             return;
         }
 
         const id = hash.slice(1);
         const timer = setTimeout(() => {
-            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            document.getElementById(id)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }, 100);
 
         return () => clearTimeout(timer);

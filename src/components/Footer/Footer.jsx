@@ -1,4 +1,5 @@
 import { Heart, Coffee, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const portfolioLinks = [
@@ -29,11 +30,11 @@ export default function Footer({ variant = 'portfolio' }) {
       <div className="container">
         <div className={styles.content}>
           <div className={styles.brand}>
-            <a href="/#hero" className={styles.logo}>
+            <Link to="/#hero" className={styles.logo}>
               <span className={styles.logoSketch}>{'<'}</span>
               <span className={styles.logoName}>Mahbub</span>
               <span className={styles.logoSketch}>{'/>'}</span>
-            </a>
+            </Link>
             <p className={styles.tagline}>Building the web, and enjoying the coffee!!</p>
           </div>
 
@@ -41,7 +42,7 @@ export default function Footer({ variant = 'portfolio' }) {
             <div className={styles.linkGroup}>
               <h4>Navigation</h4>
               {navLinks.map((item, i) => (
-                <a key={i} href={item.href}>{item.label}</a>
+                <Link key={i} to={item.href}>{item.label}</Link>
               ))}
             </div>
 
@@ -61,9 +62,9 @@ export default function Footer({ variant = 'portfolio' }) {
             &copy; {currentYear} Mahbub. Designed with <span className={styles.heart} style={{ display: 'flex' }}><Heart size={16} fill="currentColor" /></span> and way too much caffeine <span style={{ display: 'flex' }}><Coffee size={16} /></span>
           </p>
           <div className={styles.backToTop}>
-            <a href="/#hero" className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Link to="/#hero" className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ArrowUp size={16} /> Top
-            </a>
+            </Link>
           </div>
         </div>
       </div>
