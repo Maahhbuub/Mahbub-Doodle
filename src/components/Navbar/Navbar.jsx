@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
@@ -77,31 +77,31 @@ export default function Navbar({ variant = 'portfolio' }) {
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <a href="/#hero" className={styles.logo} onClick={() => handleNav('')}>
+        <NavLink to="/#hero" className={styles.logo} onClick={() => handleNav('')}>
           <span className={styles.logoSketch}>{'<'}</span>
           <span className={styles.logoName}>Mahbub</span>
           <span className={styles.logoSketch}>{'/>'}</span>
-        </a>
+        </NavLink>
 
         <nav className={`${styles.links} ${open ? styles.open : ''}`}>
           {navLinks.map((l) => (
-            <a
+            <NavLink
               key={l.href}
-              href={l.href}
+              to={l.href}
               className={`${styles.link} ${active === l.href ? styles.linkActive : ''}`}
               onClick={() => handleNav(l.href)}
             >
               {l.label}
-            </a>
+            </NavLink>
           ))}
-          <a
-            href="/#contact"
+          <NavLink
+            to="/#contact"
             className={`btn-doodle pink ${styles.ctaBtn}`}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
             onClick={() => handleNav('/#contact')}
           >
             Hire Me <Mail size={18} />
-          </a>
+          </NavLink>
         </nav>
 
         <button
