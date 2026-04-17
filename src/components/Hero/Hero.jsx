@@ -3,7 +3,7 @@ import { Sparkles, Terminal, Code, Target, Rocket, FileText, Briefcase, ChartNoA
 import styles from './Hero.module.css';
 import { useHeroAnimations } from './heroAnimations';
 
-const roles = ['Software Engineer', 'React Developer', 'Competitive Programmer', 'Coffee Addict', 'Noob Gamer'];
+const roles = ['Software Engineer', 'Competitive Programmer', 'React Developer', 'Coffee Addict', 'Video Games Lover'];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
