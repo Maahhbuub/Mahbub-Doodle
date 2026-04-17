@@ -1,5 +1,7 @@
 import { Rocket, Laptop, Palette, MapPinned } from 'lucide-react';
+import { useRef } from 'react';
 import styles from './Experience.module.css';
+import { useExperienceAnimations } from './experienceAnimations';
 
 const experiences = [
   {
@@ -29,19 +31,22 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const containerRef = useRef(null);
+  useExperienceAnimations(containerRef);
+
   return (
-    <section className={`section ${styles.experience}`} id="experience">
+    <section ref={containerRef} className={`section ${styles.experience}`} id="experience">
       <div className="container">
-        <div className={styles.header}>
+        <div className={`${styles.header} gsap-exp-header`}>
           <h2 className="section-title">
             <span className="wobbly-underline">Experience</span>
           </h2>
           <p className="section-subtitle">My professional journey and the impact I've made.</p>
         </div>
 
-        <div className={styles.timeline}>
+        <div className={`${styles.timeline} gsap-exp-timeline`}>
           {/* Handdrawn squiggly line SVG spanning the height */}
-          <div className={styles.lineWrapper} aria-hidden="true">
+          <div className={`${styles.lineWrapper} gsap-exp-line`} aria-hidden="true">
             <svg width="40" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
               <path d="M20,0 Q35,50 20,100 T20,200 T20,300 T20,400 T20,500 T20,600 T20,700 T20,800 T20,900 T20,1000 T20,1100 T20,1200 T20,1300 T20,1400 T20,1500 T20,1600 T20,1700 T20,1800 T20,1900 T20,2000"
                 fill="none" stroke="var(--ink)" strokeWidth="4" strokeDasharray="10 15" strokeLinecap="round" />
@@ -49,7 +54,7 @@ export default function Experience() {
           </div>
 
           {experiences.map((exp, i) => (
-            <div key={i} className={`${styles.item} ${i % 2 === 0 ? styles.itemLeft : styles.itemRight}`}>
+            <div key={i} className={`${styles.item} ${i % 2 === 0 ? styles.itemLeft : styles.itemRight} gsap-exp-item`}>
 
               <div className={styles.dotWrapper}>
                 <div className={`${styles.dot} ${styles[exp.color]}`}>
@@ -80,7 +85,7 @@ export default function Experience() {
           ))}
 
           {/* Endpoint 'X marks the spot' */}
-          <div className={styles.endpoint} aria-hidden="true">
+          <div className={`${styles.endpoint} gsap-exp-endpoint`} aria-hidden="true" style={{ transformOrigin: 'center' }}>
             <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
               <path d="M10,10 L40,40 M40,10 L10,40" stroke="var(--accent-pink)" strokeWidth="6" strokeLinecap="round" />
             </svg>

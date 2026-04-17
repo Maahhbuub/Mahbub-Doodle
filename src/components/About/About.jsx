@@ -1,5 +1,7 @@
 import { GraduationCap, Briefcase, Gamepad2, Coffee, User } from 'lucide-react';
+import { useRef } from 'react';
 import styles from './About.module.css';
+import { useAboutAnimations } from './aboutAnimations';
 
 const facts = [
   { icon: <GraduationCap size={24} />, label: 'Education', value: 'B.Sc. in CSE, UIU', color: 'yellow' },
@@ -9,18 +11,21 @@ const facts = [
 ];
 
 export default function About() {
+  const containerRef = useRef(null);
+  useAboutAnimations(containerRef);
+
   return (
-    <section className={`section ${styles.about}`} id="about">
+    <section ref={containerRef} className={`section ${styles.about}`} id="about">
       {/* Hand-drawn section separator */}
-      <div className={styles.topSquiggle} aria-hidden="true">
+      <div className={`${styles.topSquiggle} gsap-about-squiggle`} aria-hidden="true">
         <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,30 Q150,60 300,30 T600,30 T900,30 T1200,30" 
-                fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M0,30 Q150,60 300,30 T600,30 T900,30 T1200,30"
+            fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <div className={styles.header}>
+        <div className={`${styles.header} gsap-about-header`}>
           <h2 className="section-title">
             Behind the <span className="highlight-tape">Code</span>
           </h2>
@@ -29,10 +34,10 @@ export default function About() {
 
         <div className={styles.contentWrapper}>
           {/* Main notepad bio */}
-          <div className={`doodle-box ${styles.notepad}`}>
+          <div className={`doodle-box ${styles.notepad} gsap-about-notepad`}>
             <div className={styles.tape} aria-hidden="true" />
             {/* <div className={styles.pin} aria-hidden="true">📍</div> */}
-            
+
             <div className={styles.bio}>
               <p>
                 Hello! I'm <strong>Mahbub</strong> — a passionate software engineer who thrives at the intersection of <em className="wobbly-underline">creativity</em> and technical precision. I don't just write code; I craft digital experiences.
@@ -49,9 +54,9 @@ export default function About() {
           {/* Sticky notes facts */}
           <div className={styles.factsGrid}>
             {facts.map((f, i) => (
-              <div key={f.label} 
-                   className={`${styles.postIt} ${styles[f.color]}`}
-                   style={{ '--rotation': `${(i % 2 === 0 ? 1 : -1) * (Math.random() * 4 + 2)}deg` }}>
+              <div key={f.label}
+                className={`${styles.postIt} ${styles[f.color]} gsap-about-postit`}
+                style={{ '--rotation': `${(i % 2 === 0 ? 1 : -1) * (Math.random() * 4 + 2)}deg` }}>
                 <div className={styles.postItPin} aria-hidden="true" />
                 <span className={styles.factIcon} style={{ display: 'flex' }}>{f.icon}</span>
                 <div>
@@ -64,9 +69,9 @@ export default function About() {
         </div>
 
         {/* Floating doodles */}
-        <div className={styles.doodles}>
+        <div className={`${styles.doodles} gsap-about-doodles`}>
           <svg className={styles.arrow} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10,90 Q40,40 90,20 M70,10 L90,20 L80,40" fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M10,90 Q40,40 90,20 M70,10 L90,20 L80,40" fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <div className={styles.doodleText}>Facts!</div>
         </div>

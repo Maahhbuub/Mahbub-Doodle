@@ -2,10 +2,14 @@ import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mailbox, Mail, Smartphone, MapPin, Send } from 'lucide-react';
 import styles from './Contact.module.css';
+import { useContactAnimations } from './contactAnimations';
 
 export default function Contact() {
   const formRef = useRef();
+  const containerRef = useRef(null);
   const [status, setStatus] = useState('');
+
+  useContactAnimations(containerRef);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -33,31 +37,31 @@ export default function Contact() {
   };
 
   return (
-    <section className={`section ${styles.contact}`} id="contact">
+    <section ref={containerRef} className={`section ${styles.contact}`} id="contact">
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.textCol}>
-            <h2 className={`section-title ${styles.title}`}>
+            <h2 className={`section-title ${styles.title} gsap-contact-text`}>
               Let's <span className="highlight-tape">Connect</span>
             </h2>
-            <p className={styles.desc}>
+            <p className={`${styles.desc} gsap-contact-text`}>
               Have a project in mind, need a developer, or just want to say hi?
               My inbox is always open. Drop me a line and I'll get back to you as soon as I finish my coffee!
             </p>
 
             <div className={styles.contactInfo}>
-              <div className={styles.infoRow}>
+              <div className={`${styles.infoRow} gsap-contact-info`}>
                 <span className={styles.infoIcon} style={{ display: 'flex', color: 'var(--ink)' }}><Mail size={24} /></span>
                 <a href="mailto:mrahman221441@gmail.com" className={styles.infoLink}>mrahman221441@gmail.com</a>
               </div>
-              <div className={styles.infoRow}>
+              <div className={`${styles.infoRow} gsap-contact-info`}>
                 <span className={styles.infoIcon} style={{ display: 'flex', color: 'var(--ink)' }}><Smartphone size={24} /></span>
                 <a href="tel:+8801744177620" className={styles.infoLink}>+88 017 441 77 620</a>
               </div>
             </div>
 
             {/* Paper plane doodle */}
-            <div className={styles.planeWrapper} aria-hidden="true">
+            <div className={`${styles.planeWrapper} gsap-contact-plane`} aria-hidden="true">
               <svg className={styles.plane} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,90 L90,10 L70,90 L40,60 L90,10 M40,60 L20,70 L10,90" fill="none" stroke="#1a1a2e" strokeWidth="4" strokeLinejoin="round" />
               </svg>
@@ -68,7 +72,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className={styles.formCol}>
+          <div className={`${styles.formCol} gsap-contact-form`}>
             <form ref={formRef} onSubmit={sendEmail} className={`doodle-box ${styles.form}`}>
               <div className={styles.pin} aria-hidden="true" style={{ display: 'flex', color: 'var(--accent-pink)' }}><MapPin size={28} fill="var(--accent-pink)" /></div>
               <h3 className={styles.formTitle}>Drop a Message</h3>

@@ -1,5 +1,7 @@
 import { Trophy, Code, ChefHat, SquareTerminal, Globe, BarChart2, Gavel, ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import styles from './CompetitiveProgramming.module.css';
+import { useCPAnimations } from './cpAnimations';
 
 const platforms = [
   { name: 'Codeforces', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/TribalLiege' },
@@ -11,25 +13,28 @@ const platforms = [
 ];
 
 export default function CompetitiveProgramming() {
+  const containerRef = useRef(null);
+  useCPAnimations(containerRef);
+
   return (
-    <section className={`section ${styles.cp}`} id="competitive-programming">
+    <section ref={containerRef} className={`section ${styles.cp}`} id="competitive-programming">
       <div className="container">
-        <div className={styles.header}>
+        <div className={`${styles.header} gsap-cp-header`}>
           <h2 className="section-title">
             Competitive <span className="wobbly-underline">Programming</span>
           </h2>
           <p className="section-subtitle">Where I flex my algorithms and data structures.</p>
         </div>
 
-        <div className={styles.cpGrid}>
+        <div className={`${styles.cpGrid} gsap-cp-grid`}>
           {platforms.map((p, i) => (
             <a key={p.name}
               href={p.link !== '#' ? p.link : undefined}
               target="_blank"
               rel="noreferrer"
-              className={`doodle-box ${styles.cpCard} ${styles[p.color]}`}
+              className={`doodle-box ${styles.cpCard} ${styles[p.color]} gsap-cp-card`}
               style={{ animationDelay: `${i * 0.1}s` }}>
-              
+
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrapper}>
                   {p.icon}
@@ -53,10 +58,10 @@ export default function CompetitiveProgramming() {
         </div>
 
         {/* Decorative squiggle */}
-        <div className={styles.decoration} aria-hidden="true">
+        <div className={`${styles.decoration} gsap-cp-deco`} aria-hidden="true" style={{ transformOrigin: 'center' }}>
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,20 Q20,0 40,20 T80,20 T120,20 T160,20 T200,20"
-              fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" opacity="0.6"/>
+              fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" opacity="0.6" />
           </svg>
         </div>
       </div>

@@ -1,20 +1,25 @@
 import { Annoyed, Code, ExternalLink, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import styles from './Projects.module.css';
 import { projects } from '../../data/projects';
+import { useProjectsAnimations } from './projectsAnimations';
 
 
 
 export default function Projects({ limit, showMoreBtn }) {
+  const containerRef = useRef(null);
+  useProjectsAnimations(containerRef);
+
   return (
-    <section className={`section ${styles.projects}`} id="projects"
+    <section ref={containerRef} className={`section ${styles.projects}`} id="projects"
       style={{ background: 'var(--paper)' }}>
       {/* Background tape strips */}
       <div className={styles.tapeTopLeft} aria-hidden="true" />
       <div className={styles.tapeBottomRight} aria-hidden="true" />
 
       <div className="container">
-        <div className={styles.header}>
+        <div className={`${styles.header} gsap-project-header`}>
           <h2 className="section-title">
             Featured <span className="highlight-tape">Projects</span>
           </h2>
@@ -25,9 +30,9 @@ export default function Projects({ limit, showMoreBtn }) {
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={`${styles.grid} gsap-project-grid`}>
           {(limit ? projects.slice(0, limit) : projects).map((p, i) => (
-            <article key={p.id} className={`doodle-box ${styles.card}`}>
+            <article key={p.id} className={`doodle-box ${styles.card} gsap-project-card`}>
 
               {/* Illustration Header representing a sketch placeholder */}
               <div className={`${styles.cardHeader} ${styles[p.color]}`}>
@@ -76,7 +81,7 @@ export default function Projects({ limit, showMoreBtn }) {
           ))}
         </div>
 
-        <div className={styles.more}>
+        <div className={`${styles.more} gsap-project-more`}>
           {showMoreBtn ? (
             <Link to="/projects" className="btn-doodle">
               Show More Projects

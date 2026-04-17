@@ -1,5 +1,7 @@
 import { Swords, FileCode2, Atom, Hexagon, Type, Paintbrush, Triangle, GitBranch, PenTool, Leaf, Network, Server, Flame, Database, Wind, Terminal, Coffee } from 'lucide-react';
+import { useRef } from 'react';
 import styles from './Skills.module.css';
+import { useSkillsAnimations } from './skillsAnimations';
 
 const skills = [
   { name: 'React', icon: <Atom size={16} />, color: 'blue' },
@@ -30,21 +32,23 @@ const skills = [
 ];
 
 export default function Skills() {
+  const containerRef = useRef(null);
+  useSkillsAnimations(containerRef);
+
   return (
-    <section className={`section ${styles.skills}`} id="skills">
+    <section ref={containerRef} className={`section ${styles.skills}`} id="skills">
       <div className="container">
-        <div className={styles.header}>
+        <div className={`${styles.header} gsap-skills-header`}>
           <h2 className="section-title">
             Skills & <span className="wobbly-underline">Tools</span>
           </h2>
           <p className="section-subtitle">The things I use to turn coffee into code.</p>
         </div>
 
-        <div className={styles.skillsGrid}>
+        <div className={`${styles.skillsGrid} gsap-skills-grid`}>
           {skills.map((s, i) => (
             <div key={s.name}
-              className={`doodle-box ${styles.skillBadge} ${styles[s.color]}`}
-              style={{ animationDelay: `${i * 0.1}s` }}>
+              className={`doodle-box ${styles.skillBadge} ${styles[s.color]} gsap-skill-badge`}>
               <span className={styles.skillIcon} style={{ display: 'flex' }}>{s.icon}</span>
               <span className={styles.skillName}>{s.name}</span>
             </div>
@@ -52,7 +56,7 @@ export default function Skills() {
         </div>
 
         {/* Decorative squiggle */}
-        <div className={styles.decoration} aria-hidden="true">
+        <div className={`${styles.decoration} gsap-skills-deco`} aria-hidden="true" style={{ transformOrigin: 'center' }}>
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,20 Q20,0 40,20 T80,20 T120,20 T160,20 T200,20"
               fill="none" stroke="#1a1a2e" strokeWidth="4" strokeLinecap="round" />
