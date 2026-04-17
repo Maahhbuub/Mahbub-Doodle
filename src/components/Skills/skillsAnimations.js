@@ -15,7 +15,7 @@ export function useSkillsAnimations(containerRef) {
         gsap.to('.gsap-skills-header', {
             scrollTrigger: {
                 trigger: '.gsap-skills-header',
-                start: 'top 85%',
+                start: 'top 80%',
             },
             opacity: 1,
             y: 0,
@@ -37,7 +37,11 @@ export function useSkillsAnimations(containerRef) {
                 amount: 1,
                 from: 'random'
             },
-            ease: 'back.out(2)',
+            ease: 'back.out(2)'
+        });
+
+        // Bottom decoration reveal
+        gsap.to('.gsap-skills-deco', {
             scrollTrigger: {
                 trigger: '.gsap-skills-deco',
                 start: 'top 90%',
@@ -45,8 +49,7 @@ export function useSkillsAnimations(containerRef) {
             opacity: 1,
             scaleX: 1,
             duration: 1,
-            ease: 'elastic.out(1, 0.5)',
+            ease: 'elastic.out(1, 0.5)'
         });
-
     }, { scope: containerRef });
 }
