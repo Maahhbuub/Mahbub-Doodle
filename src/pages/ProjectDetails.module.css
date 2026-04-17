@@ -1,5 +1,5 @@
 .projectDetail {
-  padding: 8rem 0 6rem;
+  padding: 5rem 0 6rem;
   background-color: var(--paper);
   min-height: 100vh;
 }
@@ -10,7 +10,7 @@
 }
 
 .backBtn {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -62,10 +62,21 @@
   border-radius: 10px;
 }
 
-.pink { background-color: var(--accent-pink); }
-.blue { background-color: var(--accent-blue); }
-.green { background-color: var(--accent-green); }
-.yellow { background-color: var(--accent-yellow); }
+.pink {
+  background-color: var(--accent-pink);
+}
+
+.blue {
+  background-color: var(--accent-blue);
+}
+
+.green {
+  background-color: var(--accent-green);
+}
+
+.yellow {
+  background-color: var(--accent-yellow);
+}
 
 .title {
   font-family: var(--font-doodle);
@@ -157,7 +168,8 @@
   margin-bottom: 1.5rem;
 }
 
-.actionCard, .sketchCard {
+.actionCard,
+.sketchCard {
   padding: 2rem;
   background: var(--paper);
 }
@@ -202,7 +214,7 @@
   .detailLayout {
     padding: 2rem 1.5rem;
   }
-  
+
   .title {
     font-size: 2.2rem;
   }
