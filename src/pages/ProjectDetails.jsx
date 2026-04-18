@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { projects } from '../data/projects';
-import { ArrowLeft, ExternalLink, Code, CheckCircle2, Layers, Calendar, Tag, Trophy } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Code, CheckCircle2, Layers, Calendar, Tag, Trophy, X } from 'lucide-react';
 import styles from './ProjectDetails.module.css';
 import { useProjectDetailsAnimations } from './projectDetailsAnimations';
 
@@ -27,11 +27,10 @@ const ProjectDetails = () => {
         <>
             <div ref={containerRef} className={`section ${styles.projectDetail}`}>
                 <div className="container">
-                    <Link to="/projects" className={`${styles.backBtn} gsap-pd-back`}>
-                        <ArrowLeft size={20} /> Back to All Projects
-                    </Link>
-
                     <div className={`${styles.detailLayout} doodle-box`}>
+                        <Link to="/projects" className={styles.closeBtn} aria-label="Close">
+                            <X size={20} />
+                        </Link>
                         <div className={styles.tape} />
 
                         <div className={`${styles.header} gsap-pd-header`}>
