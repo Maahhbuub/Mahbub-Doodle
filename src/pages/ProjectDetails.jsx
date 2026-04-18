@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { projects } from '../data/projects';
-import { ArrowLeft, ExternalLink, Code, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Code, CheckCircle2, Layers, Calendar, Tag, Trophy } from 'lucide-react';
 import styles from './ProjectDetails.module.css';
 import { useProjectDetailsAnimations } from './projectDetailsAnimations';
 
@@ -53,6 +53,23 @@ const ProjectDetails = () => {
                                     <p className={styles.longDesc}>{project.longDesc}</p>
                                 </section>
 
+                                {project.architecture && (
+                                    <section className={`${styles.section} gsap-pd-section`}>
+                                        <h3 className={styles.sectionTitle}>Architecture</h3>
+                                        <div className={styles.archGrid}>
+                                            {project.architecture.map((item, idx) => (
+                                                <div key={idx} className={styles.archItem}>
+                                                    <div className={styles.archLayer}>
+                                                        <Layers size={15} className={styles.archIcon} />
+                                                        {item.layer}
+                                                    </div>
+                                                    <p className={styles.archDetail}>{item.detail}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                )}
+
                                 <section className={`${styles.section} gsap-pd-section`}>
                                     <h3 className={styles.sectionTitle}>Key Features</h3>
                                     <ul className={styles.featureList}>
@@ -67,6 +84,38 @@ const ProjectDetails = () => {
                             </div>
 
                             <div className={styles.sidebar}>
+                                <div className={`${styles.infoCard} doodle-box gsap-pd-sidebar`}>
+                                    <h3 className={styles.sidebarTitle}>Project Info</h3>
+                                    <ul className={styles.infoList}>
+                                        {project.type && (
+                                            <li className={styles.infoRow}>
+                                                <span className={styles.infoLabel}><Tag size={14} /> Type</span>
+                                                <span className={styles.infoValue}>{project.type}</span>
+                                            </li>
+                                        )}
+                                        {project.year && (
+                                            <li className={styles.infoRow}>
+                                                <span className={styles.infoLabel}><Calendar size={14} /> Year</span>
+                                                <span className={styles.infoValue}>{project.year}</span>
+                                            </li>
+                                        )}
+                                        {project.status && (
+                                            <li className={styles.infoRow}>
+                                                <span className={styles.infoLabel}>Status</span>
+                                                <span className={`${styles.infoValue} ${styles[`status${project.status.replace(' ', '')}`]}`}>
+                                                    <span className={styles.statusDot} /> {project.status}
+                                                </span>
+                                            </li>
+                                        )}
+                                        {project.achievement && (
+                                            <li className={styles.infoRow}>
+                                                <span className={styles.infoLabel}><Trophy size={14} /> Award</span>
+                                                <span className={styles.infoValue}>{project.achievement}</span>
+                                            </li>
+                                        )}
+                                    </ul>
+                                </div>
+
                                 <div className={`${styles.actionCard} doodle-box gsap-pd-sidebar`}>
                                     <h3 className={styles.sidebarTitle}>Links</h3>
                                     <div className={styles.links}>
@@ -79,17 +128,6 @@ const ProjectDetails = () => {
                                     </div>
                                 </div>
 
-                                <div className={`${styles.sketchCard} doodle-box gsap-pd-sidebar`}>
-                                    <h3 className={styles.sidebarTitle}>Project Sketch</h3>
-                                    <div className={styles.sketchContainer}>
-                                        <svg viewBox="0 0 100 100" className={styles.sketchSvg}>
-                                            <rect x="10" y="10" width="80" height="60" fill="none" stroke="var(--ink)" strokeWidth="2" rx="4" />
-                                            <circle cx="50" cy="40" r="15" fill="none" stroke="var(--ink)" strokeWidth="2" strokeDasharray="4 4" />
-                                            <path d="M20 80 L80 80" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" />
-                                            <path d="M30 85 L70 85" stroke="var(--ink)" strokeWidth="1" strokeLinecap="round" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
