@@ -1,5 +1,5 @@
-import { Annoyed, Code, ExternalLink, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Annoyed, Code, ExternalLink } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import styles from './Projects.module.css';
 import { projects } from '../../data/projects';
@@ -9,6 +9,7 @@ import { useProjectsAnimations } from './projectsAnimations';
 
 export default function Projects({ limit, showMoreBtn }) {
   const containerRef = useRef(null);
+  const navigate = useNavigate();
   useProjectsAnimations(containerRef);
 
   return (
@@ -32,38 +33,61 @@ export default function Projects({ limit, showMoreBtn }) {
 
         <div className={`${styles.grid} gsap-project-grid`}>
           {(limit ? projects.slice(0, limit) : projects).map((p, i) => (
-            <article key={p.id} className={`doodle-box ${styles.card} gsap-project-card`}>
+            <article
+              key={p.id}
+              className={`doodle-box ${styles.card} gsap-project-card`}
+              onClick={() => navigate(`/projects/${p.id}`)}
+              style={{ cursor: 'pointer' }}
+            >
 
-              {/* Illustration Header representing a sketch placeholder */}
+              {/* Illustration Header */}
               <div className={`${styles.cardHeader} ${styles[p.color]}`}>
                 <div className={styles.cardTape} aria-hidden="true" />
-                <svg className={styles.abstractSvg} viewBox="0 0 100 100" preserveAspectRatio="none">
-                  {i % 2 === 0 ? (
-                    <>
-                      <circle cx="20" cy="80" r="10" fill="none" stroke="var(--ink)" strokeWidth="3" />
-                      <path d="M40,50 Q60,10 80,60 T100,50" fill="none" stroke="var(--ink)" strokeWidth="3" />
-                      <rect x="70" y="20" width="15" height="15" fill="none" stroke="var(--ink)" strokeWidth="3" transform="rotate(15 70 20)" />
-                    </>
-                  ) : (
-                    <>
-                      <path d="M10,90 L50,10 L90,90 Z" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
-                      <path d="M30,50 L70,50" fill="none" stroke="var(--ink)" strokeWidth="3" strokeDasharray="5,5" />
-                      <circle cx="50" cy="50" r="5" fill="var(--ink)" stroke="none" />
-                    </>
-                  )}
-                </svg>
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className={styles.cardImg}
+                  />
+                ) : (
+                  <svg className={styles.abstractSvg} viewBox="0 0 100 100" preserveAspectRatio="none">
+                    {i % 2 === 0 ? (
+                      <>
+                        <circle cx="20" cy="80" r="10" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                        <path d="M40,50 Q60,10 80,60 T100,50" fill="none" stroke="var(--ink)" strokeWidth="3" />
+                        <rect x="70" y="20" width="15" height="15" fill="none" stroke="var(--ink)" strokeWidth="3" transform="rotate(15 70 20)" />
+                      </>
+                    ) : (
+                      <>
+                        <path d="M10,90 L50,10 L90,90 Z" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
+                        <path d="M30,50 L70,50" fill="none" stroke="var(--ink)" strokeWidth="3" strokeDasharray="5,5" />
+                        <circle cx="50" cy="50" r="5" fill="var(--ink)" stroke="none" />
+                      </>
+                    )}
+                  </svg>
+                )}
 
                 <div className={styles.linksOverlay}>
-                  <a href={p.repo} target="_blank" rel="noopener noreferrer" aria-label="Github Repo">
+                  <a href={p.repo} target="_blank" rel="noopener noreferrer" aria-label="Github Repo" onClick={e => e.stopPropagation()}>
                     <Code size={18} />
                   </a>
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" aria-label="Live Demo" onClick={e => e.stopPropagation()}>
                     <ExternalLink size={18} />
                   </a>
                 </div>
               </div>
 
               <div className={styles.cardBody}>
+                {(p.achievement || p.type) && (
+                  <div className={styles.badges}>
+                    {p.achievement && (
+                      <span className={`${styles.badge} ${styles.badgeAchievement}`}>{p.achievement}</span>
+                    )}
+                    {p.type && (
+                      <span className={`${styles.badge} ${styles.badgeType}`}>{p.type}</span>
+                    )}
+                  </div>
+                )}
                 <h3 className={styles.cardTitle}>{p.title}</h3>
                 <p className={styles.cardDesc}>{p.desc}</p>
 
@@ -72,10 +96,6 @@ export default function Projects({ limit, showMoreBtn }) {
                     <span key={t} className={styles.tag}>{t}</span>
                   ))}
                 </div>
-
-                <Link to={`/projects/${p.id}`} className={styles.viewDetails}>
-                  View Details <ArrowRight size={14} />
-                </Link>
               </div>
             </article>
           ))}
