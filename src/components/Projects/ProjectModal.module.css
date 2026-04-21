@@ -111,15 +111,3 @@
   background: var(--ink);
   border-radius: 100px;
 }
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .modal {
-    max-height: 95vh;
-    border-radius: 20px 8px 22px 8px / 8px 128px 8px 128px;
-  }
-
-  .scrollBody {
-    padding: 2rem 1.5rem;
-  }
-}
