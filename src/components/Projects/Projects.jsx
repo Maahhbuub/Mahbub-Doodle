@@ -1,18 +1,20 @@
 import { Annoyed, Code, ExternalLink } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react';
 import styles from './Projects.module.css';
 import { projects } from '../../data/projects';
 import { useProjectsAnimations } from './projectsAnimations';
+import ProjectModal from './ProjectModal';
 
 
 
 export default function Projects({ limit, showMoreBtn }) {
   const containerRef = useRef(null);
-  const navigate = useNavigate();
+  const [selectedProject, setSelectedProject] = useState(null);
   useProjectsAnimations(containerRef);
 
   return (
+    <>
     <section ref={containerRef} className={`section ${styles.projects}`} id="projects"
       style={{ background: 'var(--paper)' }}>
       {/* Background tape strips */}
@@ -36,7 +38,7 @@ export default function Projects({ limit, showMoreBtn }) {
             <article
               key={p.id}
               className={`doodle-box ${styles.card} gsap-project-card`}
-              onClick={() => navigate(`/projects/${p.id}`)}
+              onClick={() => setSelectedProject(p)}
               style={{ cursor: 'pointer' }}
             >
 
@@ -114,5 +116,14 @@ export default function Projects({ limit, showMoreBtn }) {
         </div>
       </div>
     </section>
+
+    {/* Project detail modal */}
+    {selectedProject && (
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+    )}
+    </>
   );
 }
