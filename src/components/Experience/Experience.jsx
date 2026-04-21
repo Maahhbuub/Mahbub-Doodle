@@ -13,14 +13,6 @@ const experiences = [
     color: 'pink'
   },
   {
-    role: 'Co-founder',
-    company: 'SinapsisIT',
-    period: '2025 - Present',
-    desc: 'Co-founder of a tech company built with a close collaborator, focused on developing custom websites and mobile applications for clients. We help businesses turn their ideas into functional, user-friendly digital products.',
-    icon: <Laptop size={24} />,
-    color: 'blue'
-  },
-  {
     role: 'Project Developer (University Projects)',
     company: 'United International University',
     period: '2022 - 2026',
