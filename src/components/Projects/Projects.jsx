@@ -44,7 +44,7 @@ export default function Projects({ limit, showMoreBtn }) {
 
               {/* Illustration Header */}
               <div className={`${styles.cardHeader} ${styles[p.color]}`}>
-                <div className={styles.cardTape} aria-hidden="true" />
+
                 {p.image ? (
                   <img
                     src={p.image}
