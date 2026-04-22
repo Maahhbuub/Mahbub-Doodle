@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
+import { useNavbarAnimations } from './navbarAnimations';
 
 const NAV_ITEMS = [
   { id: 'about', label: 'About' },
@@ -31,6 +32,9 @@ function getInitialActive(location) {
 }
 
 export default function Navbar({ variant = 'portfolio' }) {
+  const containerRef = useRef(null);
+  useNavbarAnimations(containerRef);
+
   const location = useLocation();
   const navLinks = getNavLinks(variant);
 
@@ -75,7 +79,7 @@ export default function Navbar({ variant = 'portfolio' }) {
   };
 
   return (
-    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <header ref={containerRef} className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <NavLink to="/#hero" className={styles.logo} onClick={() => handleNav('')}>
           <span className={styles.logoSketch}>{'<'}</span>
