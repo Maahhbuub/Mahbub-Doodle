@@ -4,7 +4,7 @@ import gsap from 'gsap';
 export function useNavbarAnimations(containerRef) {
     useGSAP(() => {
         if (!containerRef.current) return;
-        
+
         gsap.from(containerRef.current, {
             y: -100,
             opacity: 0,
