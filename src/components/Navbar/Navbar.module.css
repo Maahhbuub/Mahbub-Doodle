@@ -32,6 +32,8 @@
   align-items: center;
   gap: 4px;
   transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo:hover {
@@ -101,6 +103,8 @@
   border: none;
   cursor: pointer;
   padding: 6px;
+  position: relative;
+  z-index: 1000;
 }
 
 .hamburger span {
