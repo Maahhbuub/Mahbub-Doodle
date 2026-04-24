@@ -40,8 +40,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   /* Increased gap to accommodate rotation and shadows */
 }
 
@@ -72,7 +72,7 @@
 
 .cardHeader {
   position: relative;
-  height: 150px;
+  height: 220px;
   border: 3px solid var(--ink);
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   overflow: hidden;
@@ -190,7 +190,7 @@
 }
 
 .cardBody {
-  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -211,38 +211,27 @@
 .cardDesc {
   font-size: 1rem;
   color: var(--ink-light);
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.2rem;
   line-height: 1.6;
 }
 
 .tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
 }
 
 .tag {
   font-family: var(--font-doodle);
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.15em 0.8em;
-  border: 2px solid var(--ink);
-  background: transparent;
   color: var(--ink);
-  border-radius: 100px;
-  position: relative;
-}
-
-/* Wobbly tag background using pseudoelement to fake sketchy fill */
-.tag::before {
-  content: '';
-  position: absolute;
-  inset: 1px 3px 2px 1px;
-  background: var(--paper-dark);
-  z-index: -1;
-  border-radius: 100px;
-  transform: rotate(-1deg);
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
 .more {
