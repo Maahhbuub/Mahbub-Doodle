@@ -7,8 +7,8 @@ const platforms = [
   { name: 'Codeforces', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/TribalLiege' },
   { name: 'LeetCode', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/Maahhbuub/' },
   { name: 'CodeChef', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/maahhbuub' },
-  { name: 'HackerRank', icon: <SquareTerminal size={24} />, color: 'green', link: 'https://www.hackerrank.com/profile/mahbub620' },
-  { name: 'HackerEarth', icon: <Globe size={24} />, color: 'pink', link: 'https://www.hackerearth.com/@mahbub620/' },
+  { name: 'HackerRank', icon: <SquareTerminal size={24} />, color: 'green', link: 'https://www.hackerrank.com/profile/maahhbuub' },
+  { name: 'HackerEarth', icon: <Globe size={24} />, color: 'pink', link: 'https://www.hackerearth.com/@maahhbuub/' },
   { name: 'Vjudge', icon: <Gavel size={24} />, color: 'purple', link: 'https://vjudge.net/user/mahbub620' },
 ];
 
