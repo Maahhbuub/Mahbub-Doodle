@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   height: 40px;
-  background-image: 
+  background-image:
     linear-gradient(135deg, transparent 50%, var(--ink) 50%),
     linear-gradient(-135deg, transparent 50%, var(--ink) 50%);
   background-size: 30px 40px;
@@ -132,26 +132,36 @@
   animation: pulse 2s infinite ease-in-out;
 }
 
-.backToTop a {
+.backToTop a,
+.backToTop button {
   color: var(--paper);
   border-color: var(--paper);
+  background: transparent;
 }
 
-.backToTop a:hover {
+.backToTop a:hover,
+.backToTop button:hover {
   background: var(--paper);
   color: var(--ink);
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
   }
-  
+
   .copyright {
     flex-direction: column;
     text-align: center;

@@ -62,9 +62,9 @@ export default function Footer({ variant = 'portfolio' }) {
             &copy; {currentYear} Mahbub. Designed with <span className={styles.heart} style={{ display: 'flex' }}><Heart size={16} fill="currentColor" /></span> and way too much caffeine <span style={{ display: 'flex' }}><Coffee size={16} /></span>
           </p>
           <div className={styles.backToTop}>
-            <Link to="/#hero" className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="btn-doodle outline" aria-label="Back to top" style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
               <ArrowUp size={16} /> Top
-            </Link>
+            </button>
           </div>
         </div>
       </div>
