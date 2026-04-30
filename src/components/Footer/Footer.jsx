@@ -52,6 +52,7 @@ export default function Footer({ variant = 'portfolio' }) {
               <a href="https://linkedin.com/in/maahhbuub" target="_blank" rel="noreferrer">LinkedIn</a>
               <a href="https://twitter.com/Maahhbuub" target="_blank" rel="noreferrer">Twitter</a>
               <a href="https://instagram.com/maahhbuub" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://facebook.com/maahhbuub" target="_blank" rel="noreferrer">facebook</a>
               {/* <a href="https://codepen.io/" target="_blank" rel="noreferrer">CodePen</a> */}
             </div>
           </div>
