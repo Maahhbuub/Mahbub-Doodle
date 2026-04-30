@@ -33,10 +33,7 @@ export function useSkillsAnimations(containerRef) {
             scale: 1,
             rotation: 0,
             duration: 0.8,
-            stagger: {
-                amount: 1,
-                from: 'random'
-            },
+            stagger: 0.1,
             ease: 'back.out(2)'
         });
 
