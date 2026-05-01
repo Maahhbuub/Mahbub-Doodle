@@ -109,6 +109,7 @@ export default function Hero() {
               {[
                 { label: 'GitHub', icon: <Code size={16} />, href: 'https://github.com/Maahhbuub', brand: 'github' },
                 { label: 'LinkedIn', icon: <Briefcase size={16} />, href: 'https://www.linkedin.com/in/maahhbuub/', brand: 'linkedin' },
+                { label: 'LeetCode', icon: <Target size={16} />, href: 'https://leetcode.com/u/Maahhbuub/', brand: 'leetcode' },
                 { label: 'Codeforces', icon: <ChartNoAxesColumn size={16} />, href: 'https://codeforces.com/profile/TribalLiege', brand: 'codeforces' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"

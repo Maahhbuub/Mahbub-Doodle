@@ -50,6 +50,7 @@ export default function Footer({ variant = 'portfolio' }) {
               <h4>Socials</h4>
               <a href="https://github.com/Maahhbuub" target="_blank" rel="noreferrer">GitHub</a>
               <a href="https://linkedin.com/in/maahhbuub" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://leetcode.com/Maahhbuub/" target="_blank" rel="noreferrer">LeetCode</a>
               <a href="https://twitter.com/Maahhbuub" target="_blank" rel="noreferrer">Twitter</a>
               <a href="https://instagram.com/maahhbuub" target="_blank" rel="noreferrer">Instagram</a>
               <a href="https://facebook.com/maahhbuub" target="_blank" rel="noreferrer">Facebook</a>
