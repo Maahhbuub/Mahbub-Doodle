@@ -8,10 +8,12 @@
   flex-direction: column;
   justify-content: center;
 
-  /* Add subtle dot grid background to feel like bullet journal */
-  background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  background-position: 0 0;
+  /* Doodle paper texture via repeating lines */
+  background-image:
+    repeating-linear-gradient(transparent,
+      transparent 31px,
+      rgba(176, 196, 222, 0.15) 31px,
+      rgba(176, 196, 222, 0.15) 32px);
 }
 
 .topSquiggle {
