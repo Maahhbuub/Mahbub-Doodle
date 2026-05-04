@@ -17,8 +17,13 @@
 }
 
 @keyframes overlayIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* ── Modal panel ── */
@@ -44,6 +49,7 @@
     opacity: 0;
     transform: translateY(40px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -112,4 +118,15 @@
 .scrollBody::-webkit-scrollbar-thumb {
   background: var(--ink);
   border-radius: 100px;
+}
+
+/* ── Mobile styles ── */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .scrollBody {
+    padding: 1rem;
+  }
 }
