@@ -33,5 +33,21 @@ export function useGalleryAnimations(containerRef) {
             ease: 'back.out(1.5)'
         });
 
+        if (gsap.utils.toArray('.gsap-gallery-more').length > 0) {
+            gsap.fromTo('.gsap-gallery-more',
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: '.gsap-gallery-more',
+                        start: 'top 95%',
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    delay: 0.2
+                }
+            );
+        }
+
     }, { scope: containerRef });
 }

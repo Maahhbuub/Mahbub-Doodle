@@ -8,6 +8,7 @@ const portfolioLinks = [
   { href: '#competitive-programming', label: 'Brain Games' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
+  { href: '#gallery', label: 'Gallery' },
 ];
 
 const projectLinks = [
@@ -16,6 +17,7 @@ const projectLinks = [
   { href: '/#competitive-programming', label: 'Brain Games' },
   { href: '/projects', label: 'Projects' },
   { href: '/#experience', label: 'Experience' },
+  { href: '/gallery', label: 'Gallery' },
 ];
 
 export default function Footer({ variant = 'portfolio' }) {

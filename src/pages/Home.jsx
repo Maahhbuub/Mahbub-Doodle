@@ -16,7 +16,7 @@ function Home() {
             <CompetitiveProgramming />
             <Projects limit={6} showMoreBtn={true} />
             <Experience />
-            <Gallery />
+            <Gallery limit={6} showMoreBtn={true} />
             <Contact />
         </>
     )

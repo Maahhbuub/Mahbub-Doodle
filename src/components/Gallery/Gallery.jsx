@@ -1,11 +1,14 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Gallery.module.css';
 import { useGalleryAnimations } from './galleryAnimations';
 import { galleryData } from '../../data/galleryData';
 
-export default function Gallery() {
+export default function Gallery({ limit, showMoreBtn }) {
     const containerRef = useRef(null);
     useGalleryAnimations(containerRef);
+
+    const displayedData = limit ? galleryData.slice(0, limit) : galleryData;
 
     return (
         <section ref={containerRef} className={`section ${styles.gallerySection}`} id="gallery">
@@ -18,7 +21,7 @@ export default function Gallery() {
                 </div>
 
                 <div className={styles.grid}>
-                    {galleryData.map((item, index) => (
+                    {displayedData.map((item, index) => (
                         <div
                             key={item.id}
                             className={`${styles.polaroid} gsap-gallery-polaroid`}
@@ -35,6 +38,14 @@ export default function Gallery() {
                         </div>
                     ))}
                 </div>
+
+                {showMoreBtn && (
+                    <div className={`${styles.more} gsap-gallery-more`}>
+                        <Link to="/gallery" className="btn-doodle">
+                            Explore More Pictures
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );

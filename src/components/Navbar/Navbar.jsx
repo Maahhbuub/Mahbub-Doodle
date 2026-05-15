@@ -10,11 +10,13 @@ const NAV_ITEMS = [
   { id: 'competitive-programming', label: 'Brain Games' },
   { id: 'projects', label: 'Projects', isPage: true },
   { id: 'experience', label: 'Experience' },
+  { id: 'gallery', label: 'Gallery', isGallery: true },
 ];
 
 function getNavLinks(variant) {
-  return NAV_ITEMS.map(({ id, label, isPage }) => {
+  return NAV_ITEMS.map(({ id, label, isPage, isGallery }) => {
     if (isPage) return { href: '/projects', label };
+    if (isGallery) return { href: '/gallery', label };
     const hash = `#${id}`;
     return { href: variant === 'portfolio' ? hash : `/${hash}`, label };
   });
@@ -22,6 +24,7 @@ function getNavLinks(variant) {
 
 function getSectionId(href) {
   if (href === '/projects') return 'projects';
+  if (href === '/gallery') return 'gallery';
   if (href.startsWith('/#')) return href.slice(2);
   if (href.startsWith('#')) return href.slice(1);
   return '';
