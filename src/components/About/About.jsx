@@ -34,7 +34,7 @@ export default function About() {
 
         <div className={styles.contentWrapper}>
           {/* Main notepad bio */}
-          <div className={`doodle-box ${styles.notepad} gsap-about-notepad`}>
+          <div className={`${styles.notepad} gsap-about-notepad`}>
             <div className={styles.tape} aria-hidden="true" />
             {/* <div className={styles.pin} aria-hidden="true">📍</div> */}
 
