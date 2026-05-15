@@ -4,6 +4,7 @@ import Skills from '../components/Skills/Skills';
 import CompetitiveProgramming from '../components/CompetitiveProgramming/CompetitiveProgramming';
 import Projects from '../components/Projects/Projects';
 import Experience from '../components/Experience/Experience';
+import Gallery from '../components/Gallery/Gallery';
 import Contact from '../components/Contact/Contact';
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
             <CompetitiveProgramming />
             <Projects limit={6} showMoreBtn={true} />
             <Experience />
+            <Gallery />
             <Contact />
         </>
     )
