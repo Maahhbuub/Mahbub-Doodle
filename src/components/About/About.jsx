@@ -40,7 +40,7 @@ export default function About() {
 
             <div className={styles.bio}>
               <p>
-                Hello! I'm <strong>Mahbub</strong> — a passionate software engineer who thrives at the intersection of <em className="wobbly-underline">creativity</em> and technical precision. I don't just write code; I craft digital experiences.
+                Hello! I'm <strong className={styles.name}>Mahbubur Rahman</strong> — a passionate software engineer who thrives at the intersection of <em className="wobbly-underline">creativity</em> and technical precision. I don't just write code; I craft digital experiences.
               </p>
               <p>
                 When I'm not hammering at the keyboard debugging things that I swear were working yesterday, you'll find me finding new ideas, practicing brain games(CP), or hunting for the world's best cup of coffee.

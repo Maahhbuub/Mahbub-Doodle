@@ -16,6 +16,10 @@
       rgba(176, 196, 222, 0.15) 32px);
 }
 
+.name {
+  color: var(--accent-pink);
+}
+
 .topSquiggle {
   position: absolute;
   top: 0;
@@ -50,7 +54,7 @@
 /* Notepad Bio styling */
 .notepad {
   position: relative;
-  background: var(--paper);
+  background-color: #fafafa7e;
   padding: 3.5rem 3rem 3rem 3rem;
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   border: none;
