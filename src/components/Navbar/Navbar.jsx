@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { id: 'competitive-programming', label: 'Brain Games' },
   { id: 'projects', label: 'Projects', isPage: true },
   { id: 'experience', label: 'Experience' },
+  { id: 'achievements', label: 'Achievements' },
   { id: 'gallery', label: 'Gallery', isGallery: true },
 ];
 
