@@ -16,8 +16,8 @@ function Home() {
             <Skills />
             <CompetitiveProgramming />
             <Projects limit={6} showMoreBtn={true} />
-            <Experience />
             <Achievements />
+            <Experience />
             <Gallery limit={6} showMoreBtn={true} />
             <Contact />
         </>

@@ -1,14 +1,19 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { X } from 'lucide-react';
 import styles from './Gallery.module.css';
 import { useGalleryAnimations } from './galleryAnimations';
 import { galleryData } from '../../data/galleryData';
 
 export default function Gallery({ limit, showMoreBtn }) {
     const containerRef = useRef(null);
+    const [selectedImage, setSelectedImage] = useState(null);
     useGalleryAnimations(containerRef);
 
     const displayedData = limit ? galleryData.slice(0, limit) : galleryData;
+
+    const closeModal = () => setSelectedImage(null);
 
     return (
         <section ref={containerRef} className={`section ${styles.gallerySection}`} id="gallery">
@@ -26,6 +31,7 @@ export default function Gallery({ limit, showMoreBtn }) {
                             key={item.id}
                             className={`${styles.polaroid} gsap-gallery-polaroid`}
                             style={{ '--rotation': `${(index % 2 === 0 ? 1 : -1) * (Math.random() * 3 + 1)}deg` }}
+                            onClick={() => setSelectedImage(item.image)}
                         >
                             <div className={styles.tape} aria-hidden="true"></div>
                             <div className={styles.imageContainer}>
@@ -45,6 +51,19 @@ export default function Gallery({ limit, showMoreBtn }) {
                             Explore More Pictures
                         </Link>
                     </div>
+                )}
+
+                {/* Lightbox Modal rendered via Portal to escape all stacking contexts */}
+                {selectedImage && createPortal(
+                    <div className={styles.modalOverlay} onClick={closeModal}>
+                        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                            <button className={styles.closeButton} onClick={closeModal} aria-label="Close modal">
+                                <X size={24} strokeWidth={2.5} />
+                            </button>
+                            <img src={selectedImage} alt="Gallery Preview" className={styles.modalImage} />
+                        </div>
+                    </div>,
+                    document.body
                 )}
             </div>
         </section>

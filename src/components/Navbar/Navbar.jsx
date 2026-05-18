@@ -7,10 +7,10 @@ import { useNavbarAnimations } from './navbarAnimations';
 const NAV_ITEMS = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
-  { id: 'competitive-programming', label: 'Brain Games' },
+  { id: 'competitive-programming', label: 'CP' },
   { id: 'projects', label: 'Projects', isPage: true },
-  { id: 'experience', label: 'Experience' },
   { id: 'achievements', label: 'Achievements' },
+  { id: 'experience', label: 'Experience' },
   { id: 'gallery', label: 'Gallery', isGallery: true },
 ];
 
