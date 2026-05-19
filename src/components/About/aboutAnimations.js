@@ -9,7 +9,7 @@ export function useAboutAnimations(containerRef) {
         // Initial state fixes to avoid FOUC before scroll trigger triggers
         gsap.set('.gsap-about-header', { opacity: 0, y: 40 });
         gsap.set('.gsap-about-deco', { strokeDashoffset: 1000 });
-        gsap.set('.gsap-about-notepad', { opacity: 0, x: -60, rotation: -3 });
+        gsap.set('.gsap-about-notepad', { opacity: 0, y: 50, scale: 0.9, rotation: 2 });
         gsap.set('.gsap-about-postit', { opacity: 0, scale: 0.5, y: 40 });
         gsap.set('.gsap-about-doodles', { opacity: 0, scale: 0 });
 
@@ -57,10 +57,11 @@ export function useAboutAnimations(containerRef) {
                 start: 'top 80%',
             },
             opacity: 1,
-            x: 0,
+            y: 0,
+            scale: 1,
             rotation: 0,
-            duration: 1,
-            ease: 'back.out(1.2)',
+            duration: 1.2,
+            ease: 'elastic.out(1, 0.75)',
         });
 
         // Post-it notes pop in
