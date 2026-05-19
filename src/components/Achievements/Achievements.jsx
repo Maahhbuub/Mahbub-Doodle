@@ -19,12 +19,13 @@ function Achievements() {
     return (
         <section className={styles.achievements} ref={containerRef} id="achievements">
             <div className={`gsap-achievements-header ${styles.header}`}>
-                <h2 className={styles.title}>
+                <h2 className="section-title">
                     My Achievements
-                    <svg className={styles.titleUnderline} viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path className={`gsap-achievements-deco ${styles.path}`} d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+                    <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className="gsap-achievements-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
                     </svg>
                 </h2>
+                <p className="section-subtitle">Milestones and recognitions along my journey.</p>
             </div>
 
             <div className={styles.grid}>

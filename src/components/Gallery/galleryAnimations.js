@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function useGalleryAnimations(containerRef) {
     useGSAP(() => {
         gsap.set('.gsap-gallery-header', { opacity: 0, y: 40 });
+        gsap.set('.gsap-gallery-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-gallery-polaroid', { opacity: 0, y: 50, scale: 0.8 });
 
         gsap.to('.gsap-gallery-header', {
@@ -18,6 +19,17 @@ export function useGalleryAnimations(containerRef) {
             y: 0,
             duration: 0.8,
             ease: 'back.out(1.2)'
+        });
+
+        gsap.to('.gsap-gallery-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-gallery-header',
+                start: 'top 85%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         gsap.to('.gsap-gallery-polaroid', {

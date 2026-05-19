@@ -8,6 +8,7 @@ export function useAboutAnimations(containerRef) {
     useGSAP(() => {
         // Initial state fixes to avoid FOUC before scroll trigger triggers
         gsap.set('.gsap-about-header', { opacity: 0, y: 40 });
+        gsap.set('.gsap-about-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-about-notepad', { opacity: 0, x: -60, rotation: -3 });
         gsap.set('.gsap-about-postit', { opacity: 0, scale: 0.5, y: 40 });
         gsap.set('.gsap-about-doodles', { opacity: 0, scale: 0 });
@@ -35,6 +36,18 @@ export function useAboutAnimations(containerRef) {
             duration: 0.8,
             stagger: 0.2,
             ease: 'power3.out',
+        });
+
+        // Title underline decoration
+        gsap.to('.gsap-about-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-about-header',
+                start: 'top 85%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         // Notepad entry

@@ -8,6 +8,7 @@ export function useSkillsAnimations(containerRef) {
     useGSAP(() => {
         // Initial setup to prevent FOUC
         gsap.set('.gsap-skills-header', { opacity: 0, y: 40 });
+        gsap.set('.gsap-skills-title-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-skill-badge', { opacity: 0, scale: 0, rotation: () => gsap.utils.random(-15, 15) });
         gsap.set('.gsap-skills-deco', { opacity: 0, scaleX: 0 });
 
@@ -21,6 +22,18 @@ export function useSkillsAnimations(containerRef) {
             y: 0,
             duration: 0.8,
             ease: 'power3.out',
+        });
+
+        // Title underline decoration
+        gsap.to('.gsap-skills-title-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-skills-header',
+                start: 'top 80%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         // Skill badges random staggering pop

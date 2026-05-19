@@ -20,7 +20,10 @@ export default function Gallery({ limit, showMoreBtn }) {
             <div className="container">
                 <div className={`${styles.header} gsap-gallery-header`}>
                     <h2 className="section-title">
-                        Life in <span className="highlight-tape">Pictures</span>
+                        Life in Pictures
+                        <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path className="gsap-gallery-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+                        </svg>
                     </h2>
                     <p className="section-subtitle">A glimpse of my favorite moments & people.</p>
                 </div>

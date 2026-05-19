@@ -19,15 +19,16 @@
   position: relative;
 }
 
-.title {
-  display: inline-block;
-  align-self: flex-start;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .desc {
-  font-size: 1.2rem;
   line-height: 1.7;
-  color: var(--ink-light);
   max-width: 480px;
 }
 

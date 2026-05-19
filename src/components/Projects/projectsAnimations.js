@@ -8,6 +8,7 @@ export function useProjectsAnimations(containerRef) {
     useGSAP(() => {
         // Initial states
         gsap.set('.gsap-project-header', { opacity: 0, y: 30 });
+        gsap.set('.gsap-projects-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-project-card', { opacity: 0, y: 50, rotation: 2 });
         gsap.set('.gsap-project-more', { opacity: 0, scale: 0.8 });
 
@@ -21,6 +22,18 @@ export function useProjectsAnimations(containerRef) {
             y: 0,
             duration: 0.8,
             ease: 'power3.out',
+        });
+
+        // Title underline decoration
+        gsap.to('.gsap-projects-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-project-header',
+                start: 'top 85%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         // Animate Project Cards (staggered)

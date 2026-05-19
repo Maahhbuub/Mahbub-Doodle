@@ -8,6 +8,7 @@ export function useExperienceAnimations(containerRef) {
     useGSAP(() => {
         // Initial states to avoid FOUC
         gsap.set('.gsap-exp-header', { opacity: 0, y: 40 });
+        gsap.set('.gsap-exp-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-exp-line', { scaleY: 0, transformOrigin: 'top center' });
         gsap.set('.gsap-exp-item', { opacity: 0, y: 50 });
         gsap.set('.gsap-exp-endpoint', { opacity: 0, scale: 0, rotation: -90 });
@@ -22,6 +23,18 @@ export function useExperienceAnimations(containerRef) {
             y: 0,
             duration: 0.8,
             ease: 'power3.out',
+        });
+
+        // Title underline decoration
+        gsap.to('.gsap-exp-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-exp-header',
+                start: 'top 85%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         // Animate the vertical timeline line growing down

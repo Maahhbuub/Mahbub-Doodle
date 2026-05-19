@@ -8,6 +8,7 @@ export function useContactAnimations(containerRef) {
     useGSAP(() => {
         // Initial states
         gsap.set('.gsap-contact-text', { opacity: 0, x: -50 });
+        gsap.set('.gsap-contact-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-contact-info', { opacity: 0, y: 20 });
         gsap.set('.gsap-contact-form', { opacity: 0, x: 50, rotation: 2 });
         gsap.set('.gsap-contact-plane', { opacity: 0, scale: 0, x: -50, y: 50 });
@@ -26,6 +27,12 @@ export function useContactAnimations(containerRef) {
             stagger: 0.2,
             ease: 'power3.out',
         });
+
+        tlText.to('.gsap-contact-deco', {
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+        }, '-=0.2');
 
         tlText.to('.gsap-contact-info', {
             opacity: 1,

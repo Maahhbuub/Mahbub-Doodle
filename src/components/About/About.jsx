@@ -27,7 +27,10 @@ export default function About() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className={`${styles.header} gsap-about-header`}>
           <h2 className="section-title">
-            Behind the <span className="highlight-tape">Code</span>
+            Behind the Code
+            <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="gsap-about-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+            </svg>
           </h2>
           <p className="section-subtitle">Who I am when I'm not debugging.</p>
         </div>

@@ -1,5 +1,6 @@
 .cp {
-  background-color: var(--paper); /* Or --cream based on app rhythm */
+  background-color: var(--paper);
+  /* Or --cream based on app rhythm */
   text-align: center;
 }
 
@@ -7,8 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
 }
 
 .cpGrid {
@@ -41,7 +43,10 @@
 .cpCard::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: transparent;
   opacity: 0.15;
   z-index: 0;
@@ -124,20 +129,45 @@
 }
 
 /* Color assignment via classes */
-.cpCard.blue { --card-accent: var(--accent-blue); }
-.cpCard.blue::before { background-color: var(--accent-blue); }
+.cpCard.blue {
+  --card-accent: var(--accent-blue);
+}
 
-.cpCard.yellow { --card-accent: var(--accent-yellow); }
-.cpCard.yellow::before { background-color: var(--accent-yellow); }
+.cpCard.blue::before {
+  background-color: var(--accent-blue);
+}
 
-.cpCard.green { --card-accent: var(--accent-green); }
-.cpCard.green::before { background-color: var(--accent-green); }
+.cpCard.yellow {
+  --card-accent: var(--accent-yellow);
+}
 
-.cpCard.pink { --card-accent: var(--accent-pink); }
-.cpCard.pink::before { background-color: var(--accent-pink); }
+.cpCard.yellow::before {
+  background-color: var(--accent-yellow);
+}
 
-.cpCard.purple { --card-accent: var(--accent-purple); }
-.cpCard.purple::before { background-color: var(--accent-purple); }
+.cpCard.green {
+  --card-accent: var(--accent-green);
+}
+
+.cpCard.green::before {
+  background-color: var(--accent-green);
+}
+
+.cpCard.pink {
+  --card-accent: var(--accent-pink);
+}
+
+.cpCard.pink::before {
+  background-color: var(--accent-pink);
+}
+
+.cpCard.purple {
+  --card-accent: var(--accent-purple);
+}
+
+.cpCard.purple::before {
+  background-color: var(--accent-purple);
+}
 
 .decoration {
   margin-top: 4rem;

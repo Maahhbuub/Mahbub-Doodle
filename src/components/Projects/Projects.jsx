@@ -24,7 +24,10 @@ export default function Projects({ limit, showMoreBtn }) {
         <div className="container">
           <div className={`${styles.header} gsap-project-header`}>
             <h2 className="section-title">
-              Featured <span className="highlight-tape">Projects</span>
+              Featured Projects
+              <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path className="gsap-projects-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+              </svg>
             </h2>
             <p className="section-subtitle">
               A selection of stuff I've built.

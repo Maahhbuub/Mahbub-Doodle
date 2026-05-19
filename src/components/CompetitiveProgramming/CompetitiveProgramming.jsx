@@ -21,7 +21,10 @@ export default function CompetitiveProgramming() {
       <div className="container">
         <div className={`${styles.header} gsap-cp-header`}>
           <h2 className="section-title">
-            Competitive <span className="wobbly-underline">Programming</span>
+            Competitive Programming
+            <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="gsap-cp-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+            </svg>
           </h2>
           <p className="section-subtitle">Where I flex my algorithms and data structures.</p>
         </div>
@@ -58,7 +61,7 @@ export default function CompetitiveProgramming() {
         </div>
 
         {/* Decorative squiggle */}
-        <div className={`${styles.decoration} gsap-cp-deco`} aria-hidden="true" style={{ transformOrigin: 'center' }}>
+        <div className={`${styles.decoration} gsap-cp-wrapper-deco`} aria-hidden="true" style={{ transformOrigin: 'center' }}>
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,20 Q20,0 40,20 T80,20 T120,20 T160,20 T200,20"
               fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" opacity="0.6" />

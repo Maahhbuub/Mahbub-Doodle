@@ -40,7 +40,10 @@ export default function Skills() {
       <div className="container">
         <div className={`${styles.header} gsap-skills-header`}>
           <h2 className="section-title">
-            Skills & <span className="wobbly-underline">Tools</span>
+            Skills & Tools
+            <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="gsap-skills-title-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+            </svg>
           </h2>
           <p className="section-subtitle">The things I use to turn coffee into code.</p>
         </div>

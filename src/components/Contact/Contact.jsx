@@ -41,13 +41,18 @@ export default function Contact() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.textCol}>
-            <h2 className={`section-title ${styles.title} gsap-contact-text`}>
-              Let's <span className="highlight-tape">Connect</span>
-            </h2>
-            <p className={`${styles.desc} gsap-contact-text`}>
-              Have a project in mind, need a developer, or just want to say hi?
-              My inbox is always open. Drop me a line and I'll get back to you as soon as I finish my coffee!
-            </p>
+            <div className={styles.header}>
+              <h2 className={`section-title gsap-contact-text`}>
+                Let's Connect
+                <svg className="title-underline" preserveAspectRatio="none" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path className="gsap-contact-deco" vectorEffect="non-scaling-stroke" d="M3 9C80.5 4.5 220.5 -1.5 297 9" stroke="#ff9a3c" strokeWidth="6" strokeLinecap="round" />
+                </svg>
+              </h2>
+              <p className={`section-subtitle ${styles.desc} gsap-contact-text`}>
+                Have a project in mind, need a developer, or just want to say hi?
+                My inbox is always open. Drop me a line and I'll get back to you as soon as I finish my coffee!
+              </p>
+            </div>
 
             <div className={styles.contactInfo}>
               <div className={`${styles.infoRow} gsap-contact-info`}>

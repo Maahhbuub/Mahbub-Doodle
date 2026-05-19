@@ -8,8 +8,9 @@ export function useCPAnimations(containerRef) {
     useGSAP(() => {
         // Initial state setup to prevent FOUC
         gsap.set('.gsap-cp-header', { opacity: 0, y: 40 });
+        gsap.set('.gsap-cp-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-cp-card', { opacity: 0, scale: 0.8, y: 30 });
-        gsap.set('.gsap-cp-deco', { opacity: 0, scaleX: 0 });
+        gsap.set('.gsap-cp-wrapper-deco', { opacity: 0, scaleX: 0 });
 
         // Header fade and slide up
         gsap.to('.gsap-cp-header', {
@@ -21,6 +22,18 @@ export function useCPAnimations(containerRef) {
             y: 0,
             duration: 0.8,
             ease: 'power3.out',
+        });
+
+        // Title underline decoration
+        gsap.to('.gsap-cp-deco', {
+            scrollTrigger: {
+                trigger: '.gsap-cp-header',
+                start: 'top 85%',
+            },
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            delay: 0.3
         });
 
         // Cards pop in staggered
@@ -38,9 +51,9 @@ export function useCPAnimations(containerRef) {
         });
 
         // Bottom decoration reveal
-        gsap.to('.gsap-cp-deco', {
+        gsap.to('.gsap-cp-wrapper-deco', {
             scrollTrigger: {
-                trigger: '.gsap-cp-deco',
+                trigger: '.gsap-cp-wrapper-deco',
                 start: 'top 90%',
             },
             opacity: 1,
