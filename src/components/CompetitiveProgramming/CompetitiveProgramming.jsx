@@ -4,12 +4,10 @@ import styles from './CompetitiveProgramming.module.css';
 import { useCPAnimations } from './cpAnimations';
 
 const platforms = [
-  { name: 'Codeforces', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/TribalLiege' },
-  { name: 'LeetCode', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/Maahhbuub/' },
-  { name: 'CodeChef', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/maahhbuub' },
-  { name: 'HackerRank', icon: <SquareTerminal size={24} />, color: 'green', link: 'https://www.hackerrank.com/profile/maahhbuub' },
-  { name: 'HackerEarth', icon: <Globe size={24} />, color: 'pink', link: 'https://www.hackerearth.com/@maahhbuub/' },
-  { name: 'Vjudge', icon: <Gavel size={24} />, color: 'purple', link: 'https://vjudge.net/user/mahbub620' },
+  { name: 'Codeforces', handle: '@mahbubur', stats: 'Specialist · 1400+ rating', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/mahbubur' },
+  { name: 'LeetCode', handle: '@mahbubur_rahman', stats: '500+ problems solved', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/mahbubur_rahman' },
+  { name: 'CodeChef', handle: '@mahbubur', stats: '3★ · Top 10% nationally', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/mahbubur' },
+  { name: 'AtCoder', handle: '@mahbubur', stats: 'Regular contest participant', icon: <Globe size={24} />, color: 'purple', link: 'https://atcoder.jp/users/mahbubur' },
 ];
 
 export default function CompetitiveProgramming() {
@@ -46,10 +44,8 @@ export default function CompetitiveProgramming() {
               </div>
 
               <div className={styles.cardBody}>
-                {/* Hand-drawn style activity graph */}
-                <svg className={styles.graphDoodle} viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M0,25 Q10,15 20,20 T40,10 T60,20 T80,5 T100,15" fill="none" stroke="var(--ink)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 4" opacity="0.5" />
-                </svg>
+                <h4 className={styles.platformHandle}>{p.handle}</h4>
+                <p className={styles.platformStats}>{p.stats}</p>
               </div>
 
               <div className={styles.cardFooter}>
@@ -58,6 +54,23 @@ export default function CompetitiveProgramming() {
               </div>
             </a>
           ))}
+        </div>
+
+        <div className={`${styles.achievementsListWrapper}`}>
+          <ul className={`${styles.achievementsList} gsap-cp-list`}>
+            <li>
+              <span className={styles.bulletArrow}>→</span>
+              ICPC Dhaka Regional Participant 2023 & 2024
+            </li>
+            <li>
+              <span className={styles.bulletArrow}>→</span>
+              National Collegiate Programming Contest qualifier
+            </li>
+            <li>
+              <span className={styles.bulletArrow}>→</span>
+              Strong in dynamic programming, graph algorithms, and number theory
+            </li>
+          </ul>
         </div>
 
         {/* Decorative squiggle */}

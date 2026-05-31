@@ -1,6 +1,9 @@
 .cp {
   background-color: var(--paper);
-  /* Or --cream based on app rhythm */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 2rem 2rem;
   text-align: center;
 }
 
@@ -15,9 +18,9 @@
 
 .cpGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -104,12 +107,50 @@
   width: 100%;
   margin-bottom: 2rem;
   z-index: 1;
+  text-align: left;
 }
 
-.graphDoodle {
-  width: 100%;
-  height: 50px;
-  overflow: visible;
+.platformHandle {
+  font-family: var(--font-doodle);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--ink);
+}
+
+.platformStats {
+  font-family: var(--font-doodle);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.achievementsListWrapper {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.achievementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievementsList li {
+  font-family: var(--font-doodle);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--ink);
+}
+
+.bulletArrow {
+  color: var(--accent-green, #4caf50);
+  font-weight: bold;
 }
 
 .cardFooter {

@@ -10,6 +10,7 @@ export function useCPAnimations(containerRef) {
         gsap.set('.gsap-cp-header', { opacity: 0, y: 40 });
         gsap.set('.gsap-cp-deco', { strokeDashoffset: 1000 });
         gsap.set('.gsap-cp-card', { opacity: 0, scale: 0.8, y: 30 });
+        gsap.set('.gsap-cp-list li', { opacity: 0, x: -20 });
         gsap.set('.gsap-cp-wrapper-deco', { opacity: 0, scaleX: 0 });
 
         // Header fade and slide up
@@ -48,6 +49,19 @@ export function useCPAnimations(containerRef) {
             duration: 0.7,
             stagger: 0.1,
             ease: 'back.out(1.4)',
+        });
+
+        // List slide in staggered
+        gsap.to('.gsap-cp-list li', {
+            scrollTrigger: {
+                trigger: '.gsap-cp-list',
+                start: 'top 85%',
+            },
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: 'power2.out',
         });
 
         // Bottom decoration reveal
