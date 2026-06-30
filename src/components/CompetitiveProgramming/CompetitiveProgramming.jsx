@@ -4,10 +4,10 @@ import styles from './CompetitiveProgramming.module.css';
 import { useCPAnimations } from './cpAnimations';
 
 const platforms = [
-  { name: 'Codeforces', handle: '@mahbubur', stats: 'Specialist · 1400+ rating', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/mahbubur' },
-  { name: 'LeetCode', handle: '@mahbubur_rahman', stats: '500+ problems solved', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/mahbubur_rahman' },
-  { name: 'CodeChef', handle: '@mahbubur', stats: '3★ · Top 10% nationally', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/mahbubur' },
-  { name: 'AtCoder', handle: '@mahbubur', stats: 'Regular contest participant', icon: <Globe size={24} />, color: 'purple', link: 'https://atcoder.jp/users/mahbubur' },
+  { name: 'Codeforces', handle: '@TribalLiege', stats: 'Newbie · 900+ rating', icon: <BarChart2 size={24} />, color: 'blue', link: 'https://codeforces.com/profile/TribalLiege' },
+  { name: 'LeetCode', handle: '@Maahhbuub', stats: '50+ problems solved', icon: <Code size={24} />, color: 'yellow', link: 'https://leetcode.com/u/Maahhbuub/' },
+  { name: 'CodeChef', handle: '@maahhbuub', stats: 'New to Codechef', icon: <ChefHat size={24} />, color: 'green', link: 'https://www.codechef.com/users/maahhbuub' },
+  { name: 'Vjudge', handle: '@mahbub620', stats: 'Participated 20+ contests', icon: <Globe size={24} />, color: 'purple', link: 'https://vjudge.net/user/mahbub620' },
 ];
 
 export default function CompetitiveProgramming() {
@@ -60,15 +60,15 @@ export default function CompetitiveProgramming() {
           <ul className={`${styles.achievementsList} gsap-cp-list`}>
             <li>
               <span className={styles.bulletArrow}>→</span>
-              ICPC Dhaka Regional Participant 2023 & 2024
+              9th Runner-up in Coders Combat 5.0
             </li>
             <li>
               <span className={styles.bulletArrow}>→</span>
-              National Collegiate Programming Contest qualifier
+              UIU CSE Fest 2024 Qualifier
             </li>
             <li>
               <span className={styles.bulletArrow}>→</span>
-              Strong in dynamic programming, graph algorithms, and number theory
+              Strong in Dynamic Programming, Graph Algorithms, and Number Theory
             </li>
           </ul>
         </div>

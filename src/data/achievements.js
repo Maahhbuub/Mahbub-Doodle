@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 export const achievements = [
     {
         id: uuidv4(),
-        title: "10th Place - UIU Coders Combat 5.0",
+        title: "9th Runner-up - UIU Coders Combat 5.0",
         date: "May 2026",
-        description: "Secured 10th place in the prestigious UIU Coders Combat 5.0, showcasing strong problem-solving skills and competitive programming prowess.",
+        description: "Secured 9th Runner-up position in the prestigious UIU Coders Combat 5.0, showcasing strong problem-solving skills and competitive programming prowess.",
         icon: "Trophy"
     },
     {
