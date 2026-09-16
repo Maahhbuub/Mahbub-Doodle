@@ -73,9 +73,22 @@ export default function Projects({ limit, showMoreBtn }) {
                   )}
 
                   <div className={styles.linksOverlay}>
-                    <a href={p.repo} target="_blank" rel="noopener noreferrer" aria-label="Github Repo" onClick={e => e.stopPropagation()}>
-                      <Code size={18} />
-                    </a>
+                    {p.repos ? (
+                      <>
+                        <a href={p.repos.frontend} target="_blank" rel="noopener noreferrer" aria-label="Frontend Repo" title="Frontend" onClick={e => e.stopPropagation()} className={styles.repoIconBtn}>
+                          <Code size={16} />
+                          <span className={styles.repoLabel}>FE</span>
+                        </a>
+                        <a href={p.repos.backend} target="_blank" rel="noopener noreferrer" aria-label="Backend Repo" title="Backend" onClick={e => e.stopPropagation()} className={styles.repoIconBtn}>
+                          <Code size={16} />
+                          <span className={styles.repoLabel}>BE</span>
+                        </a>
+                      </>
+                    ) : (
+                      <a href={p.repo} target="_blank" rel="noopener noreferrer" aria-label="Github Repo" onClick={e => e.stopPropagation()}>
+                        <Code size={18} />
+                      </a>
+                    )}
                     <a href={p.link} target="_blank" rel="noopener noreferrer" aria-label="Live Demo" onClick={e => e.stopPropagation()}>
                       <ExternalLink size={18} />
                     </a>

@@ -99,6 +99,10 @@
   background-color: var(--accent-yellow);
 }
 
+.purple {
+  background-color: #c084fc;
+}
+
 .cardTape {
   position: absolute;
   top: -10px;
@@ -154,6 +158,24 @@
   transform: translate(-3px, -3px) rotate(5deg);
   box-shadow: 5px 5px 0 var(--ink);
   background: var(--accent-yellow);
+}
+
+/* FE / BE split icon buttons */
+.repoIconBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  width: auto !important;
+  border-radius: 20px !important;
+}
+
+.repoLabel {
+  font-family: var(--font-doodle);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 .badges {

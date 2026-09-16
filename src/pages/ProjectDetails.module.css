@@ -84,6 +84,10 @@
   background-color: var(--accent-yellow);
 }
 
+.purple {
+  background-color: #c084fc;
+}
+
 .title {
   font-family: var(--font-doodle);
   font-size: clamp(2.5rem, 6vw, 3.5rem);
@@ -297,6 +301,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.repoGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.repoGroup a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .sketchContainer {

@@ -139,9 +139,20 @@ export default function ProjectModal({ project, onClose }) {
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-doodle">
                     <ExternalLink size={18} /> Live Demo
                   </a>
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="btn-doodle outline">
-                    <Code size={18} /> GitHub Repo
-                  </a>
+                  {project.repos ? (
+                    <div className={detailStyles.repoGroup}>
+                      <a href={project.repos.frontend} target="_blank" rel="noopener noreferrer" className="btn-doodle outline">
+                        <Code size={16} /> Frontend
+                      </a>
+                      <a href={project.repos.backend} target="_blank" rel="noopener noreferrer" className="btn-doodle outline">
+                        <Code size={16} /> Backend
+                      </a>
+                    </div>
+                  ) : (
+                    <a href={project.repo} target="_blank" rel="noopener noreferrer" className="btn-doodle outline">
+                      <Code size={18} /> GitHub Repo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
