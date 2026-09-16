@@ -45,7 +45,7 @@ export const projects = [
     ],
     tags: ['EJS', 'ExpressJs', 'MongoDB', 'Cloudinary'],
     color: 'green',
-    link: 'https://wanderlust-ltah.onrender.com/',
+    link: 'https://wanderlust-3r2u.onrender.com/',
     repo: 'https://github.com/Maahhbuub/Wanderlust',
   },
 
