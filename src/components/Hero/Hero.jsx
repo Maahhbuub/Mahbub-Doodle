@@ -100,7 +100,7 @@ export default function Hero() {
               <a href="#projects" className="btn-doodle" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Rocket size={16} className={styles.btnIconFly} /> See My Work
               </a>
-              <a href="/Mahbub-Resume.pdf" className={`btn-doodle ${styles.resumeBtn}`} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--paper)' }}>
+              <a href="/Mahbub.pdf" className={`btn-doodle ${styles.resumeBtn}`} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--paper)' }}>
                 <FileText size={16} /> Resume
               </a>
             </div>

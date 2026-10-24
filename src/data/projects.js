@@ -50,27 +50,6 @@ export const projects = [
   },
 
   {
-    id: 3,
-    title: 'SatheCholo',
-    type: 'Mobile App',
-    year: '2026',
-    status: 'In Progress',
-    desc: 'A ride-sharing platform that integrates intra-city ride sharing and inter-city carpooling. It offers fare splitting.',
-    longDesc: 'SatheCholo is a comprehensive ride-sharing platform designed to reduce urban congestion by facilitating both intra-city short trips and inter-city long-haul carpooling. With features tailored for diverse commuter needs, it promotes eco-friendly transit and cost-sharing.',
-    features: ['Real-time ride tracking', 'Secure in-app payments', 'Driver/Rider rating system', 'Dynamic pricing algorithm'],
-    architecture: [
-      { layer: 'Mobile', detail: 'React Native cross-platform app for iOS & Android with real-time map UI' },
-      { layer: 'Backend', detail: 'Express.js REST API with WebSocket support for live ride tracking' },
-      { layer: 'Cache', detail: 'Redis for session management, ride queuing, and pub/sub notifications' },
-      { layer: 'Database', detail: 'PostgreSQL for persistent user, trip, and payment data' },
-    ],
-    tags: ['React Native', 'Express.Js', 'Redis', 'Firebase', 'PostgreSQL'],
-    color: 'pink',
-    link: 'https://www.example.com/',
-    repo: 'https://github.com/SatheCholo/sathecholo-app',
-  },
-
-  {
     id: 4,
     title: 'DirectEdge',
     achievement: '🏅 1st Runner-Up',
