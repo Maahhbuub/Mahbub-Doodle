@@ -1,4 +1,4 @@
-import { Swords, FileCode2, Atom, Hexagon, Type, Paintbrush, Triangle, GitBranch, PenTool, Leaf, Network, Server, Flame, Database, Wind, Terminal, Coffee } from 'lucide-react';
+import { Swords, FileCode2, Atom, Hexagon, Type, Paintbrush, Triangle, GitBranch, PenTool, Leaf, Network, Server, Flame, Database, Wind, Terminal, Coffee, Box } from 'lucide-react';
 import { useRef } from 'react';
 import styles from './Skills.module.css';
 import { useSkillsAnimations } from './skillsAnimations';
@@ -26,6 +26,7 @@ const skills = [
   { name: 'PHP', icon: <Server size={16} />, color: 'purple' },
   // { name: 'CSS/HTML', icon: <Paintbrush size={16} />, color: 'pink' },
   // { name: 'Next.js', icon: <Triangle size={16} />, color: 'purple' },
+  { name: 'Docker', icon: <Box size={16} />, color: 'blue' },
   { name: 'Git', icon: <GitBranch size={16} />, color: 'purple' },
   // { name: 'Figma', icon: <PenTool size={16} />, color: 'pink' },
   // { name: 'GraphQL', icon: <Network size={16} />, color: 'pink' },
