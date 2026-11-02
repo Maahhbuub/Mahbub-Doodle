@@ -1,12 +1,12 @@
 export const projects = [
   {
     id: 1,
-    title: 'Ziplify',
+    title: 'Zippify',
     type: 'Web Project',
     year: '2025',
     status: 'Completed',
     desc: 'Architected a Base62-encoded URL shortener with a Redis cache-aside pattern, reducing redirect latency by 39% (286ms → 176ms).',
-    longDesc: 'Ziplify is a production-grade URL shortener built with a performance-first mindset. It uses Base62 encoding for compact short codes and a Redis cache-aside strategy to minimize database hits on redirects. Distributed rate limiting is enforced across independently deployed frontend and backend services, ensuring consistent limits at scale.',
+    longDesc: 'zippify is a production-grade URL shortener built with a performance-first mindset. It uses Base62 encoding for compact short codes and a Redis cache-aside strategy to minimize database hits on redirects. Distributed rate limiting is enforced across independently deployed frontend and backend services, ensuring consistent limits at scale.',
     features: [
       'Base62-encoded short URL generation',
       'Redis cache-aside for 39% faster redirects',
@@ -21,10 +21,10 @@ export const projects = [
     ],
     tags: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Prisma', 'Redis'],
     color: 'purple',
-    link: 'https://ziplify.vercel.app',
+    link: 'https://zippify.vercel.app',
     repos: {
-      frontend: 'https://github.com/Maahhbuub/ziplify-web',
-      backend: 'https://github.com/Maahhbuub/ziplify-server',
+      frontend: 'https://github.com/Maahhbuub/zippify-web',
+      backend: 'https://github.com/Maahhbuub/zippify-server',
     },
   },
 
