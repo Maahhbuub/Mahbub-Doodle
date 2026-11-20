@@ -24,9 +24,9 @@ export const achievements = [
     },
     {
         id: uuidv4(),
-        title: "Talent Full Scholarship",
+        title: "Talent Pool Scholarship",
         date: "2014(JSC), 2016(SSC)",
-        description: "Awarded a full scholarship for academic excellence in both JSC and SSC examinations, reflecting consistent dedication and high achievement throughout school.",
+        description: "Awarded scholarship for academic excellence in both JSC and SSC examinations, reflecting consistent dedication and high achievement throughout school.",
         icon: "Medal"
     }
 ];
